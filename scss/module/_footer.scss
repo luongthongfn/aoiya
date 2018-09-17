@@ -1,0 +1,106 @@
+#go-top {
+    font-size: vwPC(145);
+    display: inline-block;
+    z-index: 20;
+    color: #7D7D7D;
+    width: vwPC(180) ;
+    height: vwPC(180);
+    line-height: 30px;
+    text-align: center;
+    background: #000;
+    background-size: 300% auto;
+    position: fixed;
+    bottom: vwPC(107);
+    right: vwPC(130) ;
+    cursor: pointer;
+    border-radius: 0;
+    color: #7D7D7D;
+    border: 2px solid #7D7D7D;
+}
+footer {
+    text-align: center;
+    .read-more{
+        font-size: vwSP(34);
+        margin-bottom: vwSP(27);
+    }
+    .mailto{
+        font-size: vwSP(20);
+        color: #002040;
+        display: block;
+        text-decoration: none;
+    }
+    .ft-bg{
+        min-height: vwSP(342) ;
+        background: #7D7D7D;
+        margin-top: vwPC(210) ;
+        border-top: 1px solid #707070;
+    }
+}
+
+ .copy-r{
+     font-family: "TradeGothicLTStd", sans-serif;
+     font-size: 11px;
+     color: #fff;
+     opacity: .5;
+     text-align: center;
+     margin-top: vwSP(101);
+     a{
+         color: #fff;
+         text-decoration: none;
+         text-transform: uppercase;
+         &:hover{
+             color: #ccc;
+         }
+     }
+ }
+
+@include pc(){
+    #go-top{
+        font-size: vwPC(65);
+        width: vwPC(80);
+        height: vwPC(80);
+    }
+    footer{
+        .ft-bg{
+            min-height: vwPC(147) ;
+        }
+        .read-more{
+            font-size: vwPC(34) ;
+            padding: vwPC(34) vwPC(96) vwPC(29) ;
+            margin-top: vwPC(170) ;
+            margin-bottom: vwPC(22) ;
+        }
+        .mailto{
+            font-size: vwPC(12) ;
+        }
+    }
+    .copy-r{
+        margin-top: vwPC(25) ;
+    }
+}
+@include lg(){
+    #go-top{
+        font-size: 65px;
+        width: 80px;
+        height: 80px;
+    }
+    footer{
+
+        .ft-bg{
+            min-height: 147px ;
+            margin-top: 210px;
+        }
+        .read-more{
+            font-size: 34px ;
+            padding: 34px 96px 29px ;
+            margin-top: 170px ;
+            margin-bottom: 22px ;
+        }
+        .mailto{
+            font-size: 12px ;
+        }
+    }
+    .copy-r{
+        margin-top: 25px ;
+    }
+}
