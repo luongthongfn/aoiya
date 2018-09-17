@@ -3,7 +3,7 @@
     display: inline-block;
     z-index: 20;
     color: #7D7D7D;
-    width: vwPC(180) ;
+    width: vwPC(180);
     height: vwPC(180);
     line-height: 30px;
     text-align: center;
@@ -11,96 +11,93 @@
     background-size: 300% auto;
     position: fixed;
     bottom: vwPC(107);
-    right: vwPC(130) ;
+    right: vwPC(130);
     cursor: pointer;
     border-radius: 0;
     color: #7D7D7D;
     border: 2px solid #7D7D7D;
 }
+
 footer {
     text-align: center;
-    .read-more{
-        font-size: vwSP(34);
-        margin-bottom: vwSP(27);
+}
+
+.ft-view {
+    padding: vwSP(100) 0;
+}
+.ft-top{
+    position: relative;
+    background: #358dcc;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: vwSP(20) 0;
+    .ft-brand{
+        img{
+            vertical-align: middle;
+            margin-right: vwSP(10);
+        }
     }
-    .mailto{
-        font-size: vwSP(20);
-        color: #002040;
-        display: block;
+    .go-top{
+        position: absolute;
+        right: vwSP(20);
+    }
+}
+.ft-mid{
+    background:url(../../img/depart-bg.png);
+    padding: vwSP(40) 0;
+    .ft-menu{
+        li{
+            a{
+                display: block;
+                font-size: vwSP(30);
+                color: #fff;
+                padding: vwSP(15) 0;
+            }
+        }
+    }
+}
+.ft-bot{
+    background: #358dcc;
+    min-height: vwSP(150);
+    padding-top: vwSP(30);
+}
+.copy-r {
+    font-size: 11px;
+    color: #fff;
+    opacity: .5;
+    text-align: center;
+    a {
+        color: #fff;
         text-decoration: none;
-    }
-    .ft-bg{
-        min-height: vwSP(342) ;
-        background: #7D7D7D;
-        margin-top: vwPC(210) ;
-        border-top: 1px solid #707070;
+        text-transform: uppercase;
+        &:hover {
+            color: #ccc;
+        }
     }
 }
 
- .copy-r{
-     font-family: "TradeGothicLTStd", sans-serif;
-     font-size: 11px;
-     color: #fff;
-     opacity: .5;
-     text-align: center;
-     margin-top: vwSP(101);
-     a{
-         color: #fff;
-         text-decoration: none;
-         text-transform: uppercase;
-         &:hover{
-             color: #ccc;
-         }
-     }
- }
-
-@include pc(){
-    #go-top{
+@include pc() {
+    #go-top {
         font-size: vwPC(65);
         width: vwPC(80);
         height: vwPC(80);
     }
-    footer{
-        .ft-bg{
-            min-height: vwPC(147) ;
-        }
-        .read-more{
-            font-size: vwPC(34) ;
-            padding: vwPC(34) vwPC(96) vwPC(29) ;
-            margin-top: vwPC(170) ;
-            margin-bottom: vwPC(22) ;
-        }
-        .mailto{
-            font-size: vwPC(12) ;
-        }
-    }
-    .copy-r{
-        margin-top: vwPC(25) ;
+    footer {}
+    .copy-r {
+        margin-top: vwPC(25);
     }
 }
-@include lg(){
-    #go-top{
+
+@include lg() {
+    #go-top {
         font-size: 65px;
         width: 80px;
         height: 80px;
     }
-    footer{
-
-        .ft-bg{
-            min-height: 147px ;
-            margin-top: 210px;
-        }
-        .read-more{
-            font-size: 34px ;
-            padding: 34px 96px 29px ;
-            margin-top: 170px ;
-            margin-bottom: 22px ;
-        }
-        .mailto{
-            font-size: 12px ;
-        }
-    }
-    .copy-r{
-        margin-top: 25px ;
+    footer {}
+    .copy-r {
+        margin-top: 25px;
     }
 }
