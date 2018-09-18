@@ -784,6 +784,7 @@
             label {
                 display: flex;
                 justify-content: flex-end;
+                margin-bottom: 0;
                 span {
                     font-size: 20px;
                     text-align: right;
@@ -794,10 +795,11 @@
                 textarea {
                     flex: 0 0 400px;
                     margin-left: 20px;
+                    margin-bottom: 15px;
                 }
             }
             .submit{
-                width: vwPC(400px);
+                width: 400px;
                 margin-left: auto;
                 margin-right: 0;
                 padding: 15px 0;
