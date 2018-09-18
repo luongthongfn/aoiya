@@ -19,6 +19,26 @@
     display: block;
     margin: 0;
 }
+%title2{
+    color: #00008f;
+    font-size: 40px;
+    font-weight: bold;
+}
+%subtitle2{
+    font-size: 35px;
+    &.bird{
+        &-l:before{
+            content: url(../img/pp-bird-l.png);
+            vertical-align: sub;
+            margin-right: 5px;
+        }
+        &-r:after{
+            content: url(../img/pp-bird.png);
+            vertical-align: sub;
+            margin-left: 5px;
+        }
+    }
+}
 
 .title-bg {
     background: url(../img/title-bg.png) no-repeat;
@@ -369,6 +389,30 @@
 
             .fa {
                 font-size: 30px;
+            }
+        }
+    }
+}
+.message{
+    .sc-heading{
+        padding: 50px 0;
+    }
+    &--title{
+        @extend %title2;
+    }
+    &--subtitle{
+        @extend %subtitle2;
+    }
+    &--click{
+        position: relative;
+        .dp-mid-center{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            @include translate(-50%, -50%);
+            span{
+                display: block;
+                color: #00008f;
             }
         }
     }

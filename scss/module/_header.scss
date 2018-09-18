@@ -1,61 +1,111 @@
-
 // @import '_menu.scss';
 * {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 header {
-  position: relative;
+    position: relative;
 }
 
 .clearfix {
-  &:After, &:before {
-    content: '';
-    display: table;
-    clear: both;
-  }
+
+    &:After,
+    &:before {
+        content: '';
+        display: table;
+        clear: both;
+    }
 }
 
 .logo-sp {
-  padding: vwSP(18) vwSP(59) vwSP(11);
-  img{
-    width: vwSP(77);
-    height: vwSP(70);
-  }
+    padding: vwSP(18) vwSP(59) vwSP(11);
+    img {
+        width: vwSP(77);
+        height: vwSP(70);
+    }
 }
-.logo-pc{
-  vertical-align: middle;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-  img{
-    width: 112px;
-    height: 93px;
-    margin-top: 18px;
-    margin-bottom: -20px;
-  }
+
+.logo-pc {
+    vertical-align: middle;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+
+    img {
+        width: 112px;
+        height: 93px;
+        margin-top: 18px;
+        margin-bottom: -20px;
+    }
 }
-.contact-header{
-  color: #fff;
-  background: #358dcc;
-  padding: vwPC(10) vwPC(20) vwPC(8);
-  border-radius: 3px;
-  margin-left: auto;
-  margin-right: vwPC(20);
-  margin-top: vwPC(44);
+
+.contact-header {
+    color: #fff;
+    background: #358dcc;
+    padding: vwPC(10) vwPC(20) vwPC(8);
+    border-radius: 3px;
+    margin-left: auto;
+    margin-right: vwPC(20);
+    margin-top: vwPC(44);
 }
-.sc-slide{
-  position: relative;
-  .box-name{
-    z-index: 2;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    @include translate(-50%, -50%);
-  }
+
+.header-list {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    li {
+        display: inline-block;
+        padding: 0 10px;
+        a{
+            color: #00008b
+        }
+    }
 }
+
+.header-entry {
+    background: #00008b;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15px;
+    .fa{
+        margin-right: 7px;
+    }
+}
+
+.sc-slide {
+    position: relative;
+
+    .box-name {
+        z-index: 2;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        @include translate(-50%, -50%);
+
+        h2 {
+            position: relative;
+            font-size: 40px;
+            color: #00008b;
+            margin-bottom: 20px;
+            &:after{
+               content: '';
+               position: absolute;
+               display: block;
+               width: 1000px;
+               right: 0;
+               bottom: -10px;
+               border-bottom: 2px solid #add4c9;
+            }
+
+        }
+        p{
+            font-size: 30px;
+        }
+    }
+}
+
 //pc
-@include pc() {
-  
-}
+@include pc() {}
