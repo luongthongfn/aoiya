@@ -1,6 +1,6 @@
 (function ($) {
     $(function () {
-        $("#go-top").click(function () {
+        $("#go-top, .go-top").click(function () {
             $("html, body").animate({
                 scrollTop: 0
             }, "slow");
@@ -24,7 +24,7 @@
             if (window.innerWidth < 768) {
                 $('.after-fixed').css('padding-top', $('.fixed').height());
             }
-        
+
             // var stickyPos = _this.offset().top;
             // $(window).scroll(function () {
             //     if (window.innerWidth > 992) {
@@ -41,7 +41,19 @@
             //     }
             // })
         }
+    })
 
-
+    //goto #id
+    $(window).on('load', function () {
+        $("a[href^='#']").click(function (e) {
+            e.preventDefault();
+            let target = $($(this).attr('href'));
+            if (target.length) {
+                let pos = target.offset().top;
+                $("html, body").animate({
+                    scrollTop: pos
+                }, "slow");
+            }
+        });
     })
 })(jQuery)

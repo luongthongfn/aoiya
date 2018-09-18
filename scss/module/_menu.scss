@@ -185,3 +185,8 @@ nav.nav-container {
         display: none;
     }
 }
+@include lg(){
+    .navbar nav.nav-container ul li a{
+        font-size: 30px;
+    }
+}
