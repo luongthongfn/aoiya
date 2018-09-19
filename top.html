@@ -31,7 +31,7 @@
                 <!--/mobi button-->
             </div>
         </section>
-        <section class="sc-slide">
+        <section class="slide">
             <div class="js-slider-main owl-carousel owl-theme">
                 <div class="item">
                     <img src="img/top-main-bg.png" alt="">
@@ -47,6 +47,10 @@
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis atque omnis aliquam.
                 </p>
             </div>
+            <a href="" class="show-pc scrolldown">
+                <span>SCROLL</span> <br>
+                <img src="img/i-arrow-down.png" alt="">
+            </a>
         </section>
         <script>
             (function($) {
@@ -61,10 +65,6 @@
                         768: {
                             items: 1
                         },
-                        0: {
-                            dots: false,
-                            nav: false
-                        }
                     },
                     slideBy: 1,
                     loop: true,
@@ -74,7 +74,7 @@
                     autoplayHoverPause: true,
                     smartSpeed: 500, //slide speed smooth
 
-                    dots: true,
+                    dots: false,
                     dotsEach: true,
                     nav: false,
                     // navText: ['‹', '›'],
@@ -88,13 +88,17 @@
         </script>
     </header>
     <div id="content">
+
         <section class="message">
-            <div class="sc-heading text-center">
+            <div class="heading text-center">
                 <h2 class="message--title">Lorem, ipsum dolor.</h2>
                 <p class="message--subtitle bird-r">message</p>
             </div>
+
             <div class="message--click text-center">
-                <img src="img/message.png" alt="">
+
+                <div class="message--bg"></div>
+
                 <div class="dp-mid-center">
                     <a href="">
                         <img src="img/i-mess.png" alt="">
@@ -103,20 +107,20 @@
                 </div>
             </div>
         </section>
-        <section class="sc-buss" id="bussiness">
-            <div class="title-bg text-center">
-                <h2 class="sc-buss--title">bussiness</h2>
-                <p class="sc-buss--sub-title">Lorem, ipsum dolor.</p>
+
+        <section class="about" id="bussiness">
+            <div class="heading text-center">
+                <h2 class="about--title">Lorem, ipsum dolor.</h2>
+                <p class="about--subtitle bird-l">about</p>
             </div>
             <div class="top">
-                <div class="sc-buss--wrapper">
+                <div class="about--wrapper">
                     <div class="desc">
                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis beatae enim excepturi impedit
                         earum sequi! Dolore ratione exercitationem culpa alias natus, architecto iusto eum obcaecati.
                         Omnis sed placeat sit reprehenderit velit. Dignissimos beatae ad sed iste neque. Magnam,
                         aliquam aliquid?
                     </div>
-                    <img src="img/diagram.png" alt="" class="diagram">
                 </div>
             </div>
             <div class="bot">
@@ -189,56 +193,65 @@
                     </div>
                 </div>
             </div>
-            <div class="depart-content">
-                <div class="card" id="agent1">
-                    <h3 class="card--heading">
-                        <div class="icon"><img src="img/i-agent.png" alt=""></div>
-                        <span>Lorem, ipsum dolor.</span>
-                    </h3>
-                    <p class="txt">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed ad recusandae officia cum
-                        laboriosam fugit repellat delectus sequi eveniet. Doloribus!
-                    </p>
+           
+        </section>
+
+        <section class="work">
+            <div class="heading text-center">
+                <h2 class="work--title">Lorem, ipsum dolor.</h2>
+                <p class="work--subtitle bird-r">work</p>
+            </div>
+
+            <div class="work--bg">
+
+                <div class="work--wrapper">
+                    <div class="work--entry">
+                        <div class="label">
+                            <img src="img/i-tester.png" alt="">
+                            <span>TESTER</span>
+                        </div>
+                        <div class="txt">
+                            <h3>Lorem, ipsum dolor.</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, quae!
+                            </p>
+                            <a href="" class="read-entry">ENTRY</a>
+                        </div>
+                    </div>
+    
+                    <div class="work--entry">
+                        <div class="label">
+                            <img src="img/i-tester.png" alt="">
+                            <span>TESTER</span>
+                        </div>
+                        <div class="txt">
+                            <h3>Lorem, ipsum dolor.</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, quae!
+                            </p>
+                            <a href="" class="read-entry">ENTRY</a>
+                        </div>
+                    </div>
+                    <div class="work--entry">
+                        <div class="label">
+                            <img src="img/i-tester.png" alt="">
+                            <span>TESTER</span>
+                        </div>
+                        <div class="txt">
+                            <h3>Lorem, ipsum dolor.</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, quae!
+                            </p>
+                            <a href="" class="read-entry">ENTRY</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="card" id="agent2">
-                    <h3 class="card--heading">
-                        <div class="icon"><img src="img/i-agent.png" alt=""></div>
-                        <span>Lorem, ipsum dolor.</span>
-                    </h3>
-                    <p class="txt">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed ad recusandae officia cum
-                        laboriosam fugit repellat delectus sequi eveniet. Doloribus!
-                    </p>
-                </div>
-                <div class="card" id="agent3">
-                    <h3 class="card--heading">
-                        <div class="icon"><img src="img/i-agent.png" alt=""></div>
-                        <span>Lorem, ipsum dolor.</span>
-                    </h3>
-                    <p class="txt">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed ad recusandae officia cum
-                        laboriosam fugit repellat delectus sequi eveniet. Doloribus!
-                    </p>
-                </div>
-                <div class="card" id="agent4">
-                    <h3 class="card--heading">
-                        <div class="icon"><img src="img/i-agent.png" alt=""></div>
-                        <span>Lorem, ipsum dolor.</span>
-                    </h3>
-                    <p class="txt">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed ad recusandae officia cum
-                        laboriosam fugit repellat delectus sequi eveniet. Doloribus!
-                    </p>
-                </div>
+
             </div>
         </section>
+
     </div>
     <footer>
-
-        <div class="view-map">
-            <a href=""><img src="img/gg-view.png" class="w1"></a>
-            <a href=""><img src="img/map-view.png" class="w1"></a>
-        </div>
 
         <div class="ft-bg">
             <div class="ft-bg--wrapper">

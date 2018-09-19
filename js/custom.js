@@ -41,12 +41,47 @@
             //     }
             // })
         }
+
+        //slider
+        $(".js-slider-main").owlCarousel({
+            items: 1,
+            responsive: {
+                // breakpoint from 1200 up
+                1200: {
+                    item: 1
+                },
+                768: {
+                    items: 1
+                },
+                0: {
+                    dots: false,
+                    nav: false
+                }
+            },
+            slideBy: 1,
+            loop: true,
+            rewind: false,
+            autoplay: true,
+            autoplayTimeout: 4000,
+            autoplayHoverPause: true,
+            smartSpeed: 500, //slide speed smooth
+
+            dots: true,
+            dotsEach: true,
+            nav: false,
+            // navText: ['‹', '›'],
+            // dotsContainer: '#main-custom-dots',
+            // navText: ['<img src="img/but-p.png"/>', '<img src="img/but-n.png"/>'],
+            // navText: ['<i class="fa fa-chevron-left"><i/>', '<i class="fa fa-chevron-right"><i/>'],
+            margin: 0,
+        });
     })
 
     //goto #id
     $(window).on('load', function () {
         $("a[href^='#']").click(function (e) {
             e.preventDefault();
+            $('#menu').removeClass('is-active');
             let target = $($(this).attr('href'));
             if (target.length) {
                 let pos = target.offset().top;

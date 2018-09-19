@@ -19,7 +19,7 @@ $lg: $pc+1px;
 }
 
 @mixin lg() {
-  @media (min-width: $pc) {
+  @media (min-width: $pc+1) {
     @content;
   }
 }

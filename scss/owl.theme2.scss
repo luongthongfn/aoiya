@@ -106,7 +106,7 @@ $dot-background-active: $color-base !default;
                 width: $dot-width;
                 height: $dot-height;
                 margin: $dot-margin;
-                background: $dot-background;
+                background: #9fc3e2;
                 display: block;
                 -webkit-backface-visibility: visible;
                 transition: opacity 200ms ease;
@@ -116,7 +116,7 @@ $dot-background-active: $color-base !default;
             &.active,
             &:hover {
                 span {
-                    background: $dot-background-active;
+                    background: #358dcc;
                 }
             }
         }
