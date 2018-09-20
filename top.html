@@ -15,8 +15,8 @@
 <body>
     <header>
         <section id="menu">
-            <div class="navbar sticky-header fixed clearfix">
-                <a class="logo-sp show-sp" href=""><img src="img/logo.png" alt=""></a>
+            <div class="navbar2 sticky-header fixed clearfix">
+                <a class="logo" href=""><img src="img/logo.png" alt=""></a>
                 <ul class="header-list">
                     <li><a href="">Lorem ipsum</a></li>
                     <li><a href="">Lorem ipsum</a></li>
@@ -30,20 +30,16 @@
                 <!--/mobi button-->
             </div>
         </section>
-        <section class="slide">
-            <div class="js-slider-main owl-carousel owl-theme">
-                <div class="item">
-                    <img src="img/top-main-bg.png" alt="">
-                </div>
-                <div class="item">
-                    <img src="img/top-main-bg.png" alt="">
-                </div>
-            </div>
+
+        <section class="banner">
+            <img src="img/top-main-bg.png" alt="" class="w1">
             <div class="box-name">
                 <!-- <img src="img/box-name.png" alt=""> -->
-                <h2>Lorem ipsum dolor sit amet.</h2>
+                <h2>
+                    <p>Lorem ipsum <br>dolor sit <br> amet.</p>
+                </h2>
                 <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis atque omnis aliquam.
+                    Lorem ipsum dolor, <br> sit amet consectetur adipisicing elit. <br> Facilis atque omnis aliquam.
                 </p>
             </div>
             <a href="" class="show-pc scrolldown">
@@ -51,40 +47,6 @@
                 <img src="img/i-arrow-down.png" alt="">
             </a>
         </section>
-        <script>
-            (function($) {
-            $(function() {
-                $(".js-slider-main").owlCarousel({
-                    items: 1,
-                    responsive: {
-                        // breakpoint from 1200 up
-                        1200: {
-                            item: 1
-                        },
-                        768: {
-                            items: 1
-                        },
-                    },
-                    slideBy: 1,
-                    loop: true,
-                    rewind: false,
-                    autoplay: true,
-                    autoplayTimeout: 4000,
-                    autoplayHoverPause: true,
-                    smartSpeed: 500, //slide speed smooth
-
-                    dots: false,
-                    dotsEach: true,
-                    nav: false,
-                    // navText: ['‹', '›'],
-                    // dotsContainer: '#main-custom-dots',
-                    // navText: ['<img src="img/but-p.png"/>', '<img src="img/but-n.png"/>'],
-                    // navText: ['<i class="fa fa-chevron-left"><i/>', '<i class="fa fa-chevron-right"><i/>'],
-                    margin: 0,
-                });
-            })
-        })(jQuery)
-        </script>
     </header>
     <div id="content">
 
@@ -194,8 +156,9 @@
                         <a href="#agent1" class="arrow-down"><img src="img/i-arrow-down.png" alt=""></a>
                     </div>
                 </div>
+
             </div>
-           
+
         </section>
 
         <section class="work">
@@ -220,7 +183,7 @@
                             <a href="" class="read-entry">ENTRY</a>
                         </div>
                     </div>
-    
+
                     <div class="work--entry">
                         <div class="label">
                             <img src="img/i-tester.png" alt="">
@@ -266,6 +229,10 @@
                         <img src="img/i-arrow-up.png">
                         <p>PAGE TOP</p>
                     </a>
+                    <div class="clb20"></div>
+                    <div class="show-pc">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium non necessitatibus labore omnis ipsum aspernatur error quo, dicta atque consequatur?
+                    </div>
                 </section>
 
                 <section class="ft-mid">

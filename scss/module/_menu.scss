@@ -15,6 +15,26 @@
 
 }
 
+.navbar2 {
+    position: fixed;
+    z-index: 10;
+    display: flex;
+    background: #fff;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 5px transparentize(#000, .8);
+
+    .logo {
+        padding: vwSP(11px) vwSP(15px) vwSP(5px);
+
+        img {
+            width: vwSP(62px);
+            height: vwSP(50px);
+        }
+    }
+}
+
 //menu animation
 .nav-toggle {
     z-index: 99;
@@ -163,7 +183,7 @@ nav.nav-container {
                         line-height: vwPC(15);
                         color: #000;
                         text-decoration: none;
-                        padding: vwSP(28) vwPC(18) vwSP(12);
+                        padding: vwPC(28) vwPC(18) vwPC(12);
                         border: none;
                         border-bottom: vwPC(4) solid transparent;
 
@@ -181,12 +201,35 @@ nav.nav-container {
         }
     }
 
+    .navbar2 {
+        .logo {
+            padding: vwPC(14px) vwPC(25px) vwPC(11px);
+
+            img {
+                width: vwPC(88px);
+                height: vwPC(71px);
+            }
+        }
+    }
+
     .nav-toggle {
         display: none;
     }
 }
-@include lg(){
-    .navbar nav.nav-container ul li a{
+
+@include lg() {
+    .navbar nav.nav-container ul li a {
         font-size: 16px;
+    }
+
+    .navbar2 {
+        .logo {
+            padding: (14px) (25px) (11px);
+
+            img {
+                width: (88px);
+                height: (71px);
+            }
+        }
     }
 }
