@@ -1,7 +1,7 @@
-@import "../import/_variable";
-@import "../import/_mixin";
-@import "../import/_function";
-@import "../import/_placeholder";
+// @import "../import/_variable";
+// @import "../import/_mixin";
+// @import "../import/_function";
+// @import "../import/_placeholder";
 
 //@import "../import/_fonts";
 %title {
@@ -75,7 +75,10 @@
     width: vwSP(635);
     margin: auto;
 }
-
+.wrapper3{
+    width: vwSP(631px);
+    margin: auto;
+}
 .title-bg {
     background: url(../img/title-bg.png) no-repeat;
     background-position: 60% 70%;
@@ -99,6 +102,48 @@
     }
 }
 
+.block-page-name{
+    display: flex;
+    position: relative;
+    height: vwSP(300px);
+    overflow: hidden;
+    .half{
+        width: 50%;
+        background: url(../../img/mes-banner-l.png) no-repeat;
+        background-size: cover;
+        background-position: center center 0;
+    }
+    .page-name{
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        bottom: 0;
+        left: 50%;
+        @include translate(-50%, 0);
+        width: vwSP(320px);
+        height: vwSP(169px);
+        background: transparentize(#fff, .1);
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        h2{
+            position: relative;
+            font-size: vwSP(25px);
+            color: #00008f;
+            text-align: center;
+            font-weight: bold;
+            &:after{
+                content: '';
+                position: relative;
+                display: block;
+                width: 90%;
+                top: vwSP(5px);
+                left: 50%;
+                @include translate(-50%); 
+                border-bottom: 2px solid #add4c9;
+            }
+        }
+    }
+}
 /*
 *        pc
 */
@@ -135,6 +180,24 @@
     .wrapper2 {
         width: vwPC(1002px);
     }
+    .wrapper3{
+        width: vwPC(1000);
+    }
+    .block-page-name{
+        height: vwPC(300px);
+        border-bottom: 2px solid #00008f;
+        .page-name{
+            width: vwPC(234px);
+            height: vwPC(121px);
+            h2{
+                font-size: vwPC(18px);
+                margin-top: vwPC(20px);
+                &:after{
+                    top: vwPC(5px);
+                }
+            }
+        }
+    }
 }
 
 /*
@@ -170,8 +233,25 @@
     .wrapper1 {
         width: (800px);
     }
-
+    .wrapper3{
+        width: 1000px;
+    }
     .wrapper2 {
         width: (1002px);
+    }
+    .block-page-name{
+        height: (300px);
+        border-bottom: 2px solid #00008f;
+        .page-name{
+            width: (234px);
+            height: (121px);
+            h2{
+                font-size: (18px);
+                margin-top: (20px);
+                &:after{
+                    top: (5px);
+                }
+            }
+        }
     }
 }
