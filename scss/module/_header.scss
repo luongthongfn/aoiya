@@ -109,6 +109,10 @@ header {
 
 //pc
 @include pc() {
+    .slide .box-name h2{
+        font-size: vwPC(40);
+        margin-bottom: vwPC(20);
+    }
     .scrolldown{
         display: inline-block;
         text-align: center;
@@ -122,5 +126,11 @@ header {
             font-size: vwPC(14px);
             padding-bottom: vwPC(10px);
         }
+    }
+}
+@include lg(){
+    .slide .box-name h2{
+        font-size: 40px;
+        margin-bottom: 20px;
     }
 }

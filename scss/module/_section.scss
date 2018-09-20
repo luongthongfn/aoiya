@@ -57,6 +57,15 @@
         }
     }
 }
+.title2{
+    @extend %title2;
+}
+.subtitle2{
+    @extend %subtitle2;
+}
+.heading{
+    padding:vwSP(60px)  0;
+}
 /* #region  section */
 .title-bg {
     background: url(../img/title-bg.png) no-repeat;
@@ -150,7 +159,7 @@
             width: vwSP(433);
             margin: auto;
 
-            .heading {
+            &--heading {
                 color: #358dcc;
                 margin-bottom: vwSP(10);
             }
@@ -373,6 +382,7 @@
 }
 
 .message {
+    
     &--bg{
         width: vwSP(750px);
         height: vwSP(337px);
@@ -460,7 +470,7 @@
             width: vwSP(433);
             margin: auto;
 
-            .heading {
+            &--heading {
                 color: #358dcc;
                 margin-bottom: vwSP(10);
             }
@@ -587,15 +597,18 @@
     .subtitle {
         font-size: vwPC(20);
     }
-    .message--title, .about--title, .work--title{
+    .title2{
         font-size: vwPC(30px);
     }
-    .message--subtitle, .about--subtitle, .work--subtitle{
+    .subtitle2{
         font-size: vwPC(20px);
     }
     .title-bg{
         padding: vwPC(60) 0;
         margin-bottom: 0;
+    }
+    .heading{
+        padding:vwPC(60px)  0;
     }
     .wrapper1{
         width: vwPC(800);
@@ -799,7 +812,7 @@
 
         .top {
             padding: vwPC(60) 0;
-
+            padding-top: 0;
             .desc {
                 padding: vwPC(30) vwPC(60);
             }
@@ -915,11 +928,17 @@
         font-size: 25px;
     }
 
-    .-subtitle {
+    .subtitle {
         font-size: 20px;
     }
-    .message--subtitle, .about--subtitle, .work--subtitle{
+    .title2{
+        font-size: 22px;
+    }
+    .subtitle2{
         font-size: (20px);
+    }
+    .heading{
+        padding:(20px)  0;
     }
     .wrapper1{
         width: (800px);
