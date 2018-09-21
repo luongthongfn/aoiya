@@ -42,7 +42,17 @@
             // })
         }
 
+        
         //js-tab
+        /* 
+        .js-tab
+            ul.js-tabnav
+                a[href="#tab1"]
+                a[href="#tab2"]
+            .js-tab-content
+                #tab1.tab-panel.fade.in
+                #tab2.tab-panel.fade
+        */
         $('.js-tab').each(function () {
             var _this = $(this);
             var nav = _this.find('.js-tabnav');

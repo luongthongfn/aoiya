@@ -1,0 +1,138 @@
+.contact-page {
+    .i-rhomb {
+        width: 12px;
+        height: 12px;
+        display: inline-block;
+        background: #cd0100;
+        @include rotate(45);
+        margin-right: 5px;
+    }
+
+    .contact-title {
+        font-size: 40px;
+        color: #00008b;
+        text-align: center;
+        padding: 60px 0;
+    }
+
+    .contact-notify {
+        background: #f9f9eb;
+        max-width: 1000px;
+        padding: 40px 0;
+        margin: auto;
+
+        .notify-title {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style-type: disc;
+            list-style-position: inside;
+            color: #707070;
+
+            li {
+                font-size: 20px;
+            }
+        }
+    }
+
+    .step-box {
+        display: flex;
+        background: linear-gradient(#92b4dc, #5a8cc9);
+        margin: 80px 30px 70px;
+        box-shadow: 0 5px 5px transparentize(#000, .8);
+        border-radius: 20px;
+        overflow: hidden;
+
+        li {
+            color: #fff;
+            width: 33%;
+            padding: 20px;
+            padding-right: 0px;
+
+            +li {
+                border-left: 2px solid #4976b9;
+            }
+
+            &.active {
+                background: #fff;
+                color: #5a8cc9;
+            }
+
+            .step {
+                display: inline-block;
+                text-transform: uppercase;
+                font-weight: bold;
+                vertical-align: middle;
+                text-align: center;
+                margin-right: 15px;
+
+                span {
+                    display: block;
+                }
+
+                .num {
+                    font-size: 30px;
+                }
+            }
+
+            .step-desc {
+                font-size: 18px;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .table-layout {
+        border-width: 2px;
+        font-size: 25px;
+        color: #707070;
+
+        .thead {
+            font-size: 30px;
+            font-weight: bold;
+            color: #5a8cc9;
+            background: #f1f2f3;
+            padding: 10px;
+            border-width: 2px;
+            margin-top: -2px;
+            margin-left: -2px;
+        }
+
+        .trow {
+            flex-direction: column;
+        }
+
+        .tdata {
+            padding: 10px;
+            border-width: 2px;
+            margin-top: -2px;
+            margin-left: -2px;
+
+            input[type="radio"] {
+                position: relative;
+                vertical-align: middle;
+                width: 30px;
+                height: 30px;
+
+                &:before {
+                    position: absolute;
+                    content: '';
+                    display: block;
+                    width: 30px;
+                    height: 30px;
+                    background: #fff;
+                    border: 1px solid #e5e6e8;
+                    border-radius: 30px;
+                }
+            }
+        }
+    }
+}
+
+//pc screen
+@include pc() {}
+
+//large screen
+@include lg() {}
