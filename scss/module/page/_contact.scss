@@ -92,7 +92,7 @@
         .thead {
             font-size: 30px;
             font-weight: bold;
-            color: #5a8cc9;
+            color: hsl(213, 51%, 57%);
             background: #f1f2f3;
             padding: 10px;
             border-width: 2px;
@@ -115,7 +115,7 @@
                 vertical-align: middle;
                 width: 30px;
                 height: 30px;
-
+                margin-right: 25px;
                 &:before {
                     position: absolute;
                     content: '';
