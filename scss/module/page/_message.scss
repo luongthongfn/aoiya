@@ -171,55 +171,7 @@
     }
 }
 
-.pagination {
-    display: flex;
-    background: linear-gradient(#92b3dc, #5a8dc9);
-    margin: vwSP(40px);
-    border-radius: vwSP(100px);
-    overflow: hidden;
 
-    .prev,
-    .next {
-        display: flex;
-        align-items: center;
-        width: 50%;
-        height: vwSP(120px);
-        padding: vwSP(20px);
-
-        .fa {
-            color: #fff;
-            font-size: vwSP(50px);
-        }
-
-        .eng {
-            color: #fff;
-            font-size: vwSP(40px);
-            padding: 0 vwSP(10px);
-        }
-
-        .jpn {
-            font-size: vwSP(20px);
-            color: #add4c9;
-        }
-    }
-
-    .prev {
-        justify-content: flex-end;
-        border-right: 2px solid #9bbadf;
-
-        .fa {
-            margin-right: auto;
-        }
-    }
-
-    .next {
-        border-left: 2px solid #5781bf;
-
-        .fa {
-            margin-left: auto;
-        }
-    }
-}
 
 //pc screen
 @include pc() {
@@ -424,47 +376,7 @@
         }
     }
 
-    .pagination {
-        width: vwPC(700px);
-        margin: auto;
-        border-radius: vwPC(100px);
-        .prev,
-        .next {
-            height: vwPC(80px);
-            padding: vwPC(20px);
 
-            .fa {
-                font-size: vwPC(50px);
-            }
-
-            .eng {
-                font-size: vwPC(20px);
-                padding: 0 vwPC(10px);
-            }
-
-            .jpn {
-                font-size: vwPC(20px);
-                color: #add4c9;
-            }
-        }
-
-        .prev {
-            justify-content: flex-end;
-            border-right: 2px solid #9bbadf;
-
-            .fa {
-                margin-right: auto;
-            }
-        }
-
-        .next {
-            border-left: 2px solid #5781bf;
-
-            .fa {
-                margin-left: auto;
-            }
-        }
-    }
 
 }
 
@@ -671,45 +583,5 @@
         }
     }
 
-    .pagination {
-        width: (700px);
-        margin: auto;
-        border-radius: (100px);
-        .prev,
-        .next {
-            height: (80px);
-            padding: (20px);
 
-            .fa {
-                font-size: (50px);
-            }
-
-            .eng {
-                font-size: (20px);
-                padding: 0 (10px);
-            }
-
-            .jpn {
-                font-size: (20px);
-                color: #add4c9;
-            }
-        }
-
-        .prev {
-            justify-content: flex-end;
-            border-right: 2px solid #9bbadf;
-
-            .fa {
-                margin-right: auto;
-            }
-        }
-
-        .next {
-            border-left: 2px solid #5781bf;
-
-            .fa {
-                margin-left: auto;
-            }
-        }
-    }
 }
