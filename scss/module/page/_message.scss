@@ -54,6 +54,7 @@
 .message-part {
     .message-post {
         margin-bottom: vwSP(60px);
+        overflow: hidden;
 
         &:nth-child(odd) {
             .message-post-header {
@@ -145,7 +146,10 @@
                     text-align: center;
 
                     &:after {
-                        content: url(../img/mes-title-bird.png);
+                        content: '';
+                        background: url(../img/mes-title-bird.png) no-repeat;
+                        background-position: center center;
+                        background-size: contain;
                         display: inline-block;
                         width: vwSP(43px);
                         height: vwSP(34px);
