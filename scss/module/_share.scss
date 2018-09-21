@@ -158,6 +158,25 @@
     border-radius: vwSP(100px);
     overflow: hidden;
     clear: both;
+    .entry{
+        display: flex;
+        width: 100%;
+        align-items: center;
+        height: vwSP(118px);
+        padding: vwSP(33px);
+        .eng{
+            font-size: vwSP(45px);
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #fff;
+            margin-left: auto;
+        }
+        .fa{
+            font-size: vwSP(45px);
+            color: #fff;
+            margin-left: auto;
+        }
+    }
     .prev,
     .next {
         display: flex;
@@ -231,7 +250,7 @@
     }
 
     .wrapper1 {
-        width: vwPC(800);
+        width: vwPC(800px);
     }
 
     .wrapper2 {
@@ -239,7 +258,7 @@
     }
 
     .wrapper3 {
-        width: vwPC(1000);
+        width: vwPC(1000px);
     }
 
     .block-page-name {
@@ -265,9 +284,27 @@
         width: vwPC(700px);
         margin: auto;
         border-radius: vwPC(100px);
-
+        .entry{
+            display: flex;
+            width: 100%;
+            align-items: center;
+            height: vwPC(80px);
+            padding: vwPC(33px);
+            .eng{
+                font-size: vwPC(30px);
+                font-weight: bold;
+                text-transform: uppercase;
+                color: #fff;
+                margin-left: auto;
+            }
+            .fa{
+                font-size: vwPC(45px);
+                color: #fff;
+                margin-left: auto;
+            }
+        }
         .prev,
-        .next {
+        .next, {
             height: vwPC(80px);
             padding: vwPC(20px);
 
@@ -371,7 +408,25 @@
         width: (700px);
         margin: auto;
         border-radius: (100px);
-
+        .entry{
+            display: flex;
+            width: 100%;
+            align-items: center;
+            height: (80px);
+            padding: (33px);
+            .eng{
+                font-size: (30px);
+                font-weight: bold;
+                text-transform: uppercase;
+                color: #fff;
+                margin-left: auto;
+            }
+            .fa{
+                font-size: (45px);
+                color: #fff;
+                margin-left: auto;
+            }
+        }
         .prev,
         .next {
             height: (80px);

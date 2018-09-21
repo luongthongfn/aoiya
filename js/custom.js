@@ -42,7 +42,48 @@
             // })
         }
 
-        //slider
+        //js-tab
+        $('.js-tab').each(function () {
+            var _this = $(this);
+            var nav = _this.find('.js-tabnav');
+            $(nav).on("click", "a[href^='#']", function (e) {
+                e.preventDefault();
+                if ($(this).parent().hasClass('active')) {
+                    return;
+                }
+                $(nav).find('.active').removeClass('active');
+                $(this).parent().addClass('active');
+                var target = $($(this).attr('href'));
+                target.siblings().removeClass('in');
+                setTimeout(() => {
+                    target.siblings().removeClass('active');
+                }, 100);
+                target.addClass('active');
+                setTimeout(() => {
+                    target.addClass('in');
+                }, 100);
+            })
+        })
+    })
+
+    //goto #id
+    $(window).on('load', function () {
+        $("a.go-to[href^='#']").click(function (e) {
+            e.preventDefault();
+            $('#menu').removeClass('is-active');
+            let target = $($(this).attr('href'));
+            if (target.length) {
+                let pos = target.offset().top;
+                $("html, body").animate({
+                    scrollTop: pos
+                }, "slow");
+            }
+        });
+    })
+
+
+    //slider--------------------------------
+    $(function () {
         $(".js-slider-main").owlCarousel({
             items: 1,
             responsive: {
@@ -77,18 +118,5 @@
         });
     })
 
-    //goto #id
-    $(window).on('load', function () {
-        $("a[href^='#']").click(function (e) {
-            e.preventDefault();
-            $('#menu').removeClass('is-active');
-            let target = $($(this).attr('href'));
-            if (target.length) {
-                let pos = target.offset().top;
-                $("html, body").animate({
-                    scrollTop: pos
-                }, "slow");
-            }
-        });
-    })
+
 })(jQuery)

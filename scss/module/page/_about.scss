@@ -4,7 +4,7 @@
     margin-bottom: vwPC(110px);
     &--bg{
         background: rgba(255,255,255,0.6);
-        padding: 8vw 0;
+        padding: vwSP(60px) 0 ;
     }
     &--arc{
         border-bottom: 2px solid #00008b;
@@ -16,9 +16,6 @@
     .has-image {
         text-align: center;
         margin: auto;
-        img {
-            
-        }
     }
     &--txt{
         color: #393939;
@@ -39,15 +36,25 @@
         margin-top: vwPC(30px);
         &--bg{
             background: rgba(255,255,255,0.6);
-            padding: vwPC(100px) vwPC(120px);
+            padding: vwPC(100px) vwPC(120px) ;
         }
         &--arc{
             padding-bottom: vwPC(25px);
-            margin-bottom: vwPC(60px);
+            margin-bottom: vwPC(40px);
             clear: both;
-            @include clear()
+            @include clear();
             &:last-child{
                border-bottom: 0;
+               margin-bottom: 0;
+            }
+            &:nth-child(even){
+                .has-image{
+                    float: right;
+                    img{
+                        margin-left: vwPC(50px);
+                        margin-right: 0;
+                    }
+                }
             }
         }
         .has-image {
@@ -71,4 +78,35 @@
 }
 
 //large screen
-@include lg(){}
+@include lg(){
+    .about{
+        margin-top: (30px);
+        &--bg{
+            padding: (100px) (120px) ;
+        }
+        &--arc{
+            padding-bottom: (25px);
+            margin-bottom: (60px);
+            @include clear();
+            &:last-child{
+               border-bottom: 0;
+            }
+        }
+        .has-image {
+            img {
+                width: (222px);
+                margin-right: (50px);
+            }
+        }
+        &--txt{
+            padding: (0px) (0px);
+            h3{
+                font-size: (30px);
+                margin-bottom: (20px);
+            }
+            p{
+                font-size: (20px);
+            }
+        }
+    }
+}
