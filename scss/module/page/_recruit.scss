@@ -1,6 +1,9 @@
 .recruit-page {
     margin-top: vwSP(94px);
     margin-bottom: vwSP(120px);
+    .container{
+        @extend %wrapper3;
+    }
     .recruit-tab {
         ul {
             font-size: 0;
@@ -15,7 +18,7 @@
                 &.active {
                     a {
                         color: #fff;
-                        background: #4c8cce;
+                        background: #5a8cc9;
                         height: vwSP(78px);
                     }
                 }
@@ -30,8 +33,8 @@
                     padding: vwSP(10px) vwSP(20px);
                     border: 1px solid #ccc;
                     border-bottom: 0;
-                    border-top-left-radius: 10px;
-                    border-top-right-radius: 10px;
+                    border-top-left-radius: vwSP(10px);
+                    border-top-right-radius: vwSP(10px);
 
                     img {
                         width: vwSP(30px);
@@ -101,6 +104,8 @@
                         width: vwPC(200px);
                         height: vwPC(72px);
                         padding: vwPC(10px) vwPC(20px);
+                        border-top-left-radius: vwPC(10px);
+                        border-top-right-radius: vwPC(10px);
                         img {
                             width: vwPC(30px);
                             height: vwPC(30px);
@@ -171,6 +176,8 @@
                         width: (200px);
                         height: (72px);
                         padding: (10px) (20px);
+                        border-top-left-radius: (10px);
+                        border-top-right-radius: (10px);
                         img {
                             width: (30px);
                             height: (30px);

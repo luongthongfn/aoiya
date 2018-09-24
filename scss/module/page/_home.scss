@@ -1,6 +1,8 @@
 .info {
-
-    .arc {
+    .container{
+        @extend %wrapper1
+    }
+    .info-arc {
         font-size: vwSP(20);
         margin-bottom: vwSP(20);
 
@@ -11,13 +13,15 @@
 }
 
 .bussiness {
-
-    .top {
+    .container{
+        @extend %wrapper1;
+    }
+    .bussiness-top {
         text-align: center;
         background: #ecf8fc;
         padding: vwSP(60) 0;
 
-        .desc {
+        .bussiness-desc {
             background: #f5fcfe;
             font-size: vwSP(25px);
             text-align: left;
@@ -27,7 +31,7 @@
         }
     }
 
-    .department {
+    .bussiness-department {
         position: relative;
         background: url(../img/depart-bg.png) center center no-repeat;
         background-size: 100% 100%;
@@ -47,7 +51,7 @@
             border: 2px solid #fff;
         }
 
-        .label {
+        .department-label {
             position: relative;
             display: inline-block;
             margin-bottom: vwSP(15);
@@ -63,7 +67,7 @@
             }
         }
 
-        .summary {
+        .department-summary {
             width: vwSP(433);
             margin: auto;
 
@@ -85,7 +89,7 @@
         background: url(../img/depart-content-bg.png);
         padding: vwSP(60) 0 vwSP(30);
 
-        .card {
+        .depart-card {
             background: #fff;
             padding: vwSP(40);
             margin-bottom: vwSP(40);
@@ -108,10 +112,11 @@
                     align-items: center;
                     border-radius: 4px;
                     box-shadow: 0 1px 2px transparentize(#000, .5);
+                    margin-right: vwSP(15px);
                 }
             }
 
-            .txt {
+            .depart-txt {
                 font-size: vwSP(30);
             }
         }
@@ -119,13 +124,11 @@
 }
 
 .recruit {
-
-
     .recruit-box {
         position: relative;
 
-        .link1,
-        .link2 {
+        .recruit-link1,
+        .recruit-link2 {
             position: absolute;
             font-size: vwSP(30);
             text-align: center;
@@ -137,12 +140,12 @@
             }
         }
 
-        .link1 {
+        .recruit-link1 {
             top: vwSP(450);
             left: vwSP(100);
         }
 
-        .link2 {
+        .recruit-link2 {
             top: vwSP(300);
             right: vwSP(100);
         }
@@ -151,14 +154,16 @@
 
 .outline {
 
-
+    .container{
+        @extend %wrapper2;
+    }
     .outline-bg {
         background: url(../img/depart-content-bg.png);
         padding: vwSP(60) 0;
     }
 
     &--table {
-        .row {
+        .outline-row {
             display: flex;
             margin-bottom: vwSP(10);
 
@@ -219,7 +224,6 @@
         }
 
         .heading-bot {
-
             font-weight: bold;
             text-align: center;
             color: #00008f;
@@ -228,6 +232,7 @@
 
     &--map {
         background: #000;
+        height: vwSP(600px);
     }
 }
 
@@ -273,7 +278,7 @@
             border: 1px solid #eee;
         }
 
-        .submit {
+        .contact-submit {
             display: block;
             width: vwSP(500);
             background: #358dcc;
@@ -296,24 +301,24 @@
     .info {
         margin-top: vwPC(60);
 
-        .arc {
+        .info-arc {
             font-size: vwPC(20);
         }
     }
 
     .bussiness {
-        .top {
+        .bussiness-top {
             padding: vwPC(80) 0 vwPC(60);
 
-            .desc {
+            .bussiness-desc {
                 font-size: vwPC(20px);
                 padding: vwPC(30) vwPC(60);
                 margin-bottom: vwPC(50px);
             }
         }
 
-        .bottom {
-            .department {
+        .bussiness-bottom {
+            .bussiness-department {
                 width: 50%;
                 float: left;
 
@@ -324,7 +329,7 @@
                     bottom: vwPC(25);
                 }
 
-                .label {
+                .department-label {
                     margin-bottom: vwPC(15px);
                 }
 
@@ -332,7 +337,7 @@
                     font-size: vwPC(21px);
                 }
 
-                .summary {
+                .department-summary {
                     width: vwPC(400);
                 }
             }
@@ -342,7 +347,7 @@
             clear: both;
             padding-top: vwPC(60px);
 
-            .card {
+            .depart-card {
                 padding: vwPC(30px);
                 margin-bottom: vwPC(20px);
 
@@ -358,7 +363,7 @@
                     }
                 }
 
-                .txt {
+                .depart-txt {
                     font-size: vwPC(20px);
                     overflow: hidden;
                 }
@@ -369,19 +374,19 @@
     .recruit {
         .recruit-box {
 
-            .link1,
-            .link2 {
+            .recruit-link1,
+            .recruit-link2 {
                 text-transform: uppercase;
                 font-size: vwPC(25px);
                 width: vwPC(378px);
             }
 
-            .link1 {
+            .recruit-link1 {
                 top: vwPC(200px);
                 left: vwPC(300px);
             }
 
-            .link2 {
+            .recruit-link2 {
                 top: vwPC(282px);
                 right: vwPC(260px);
             }
@@ -396,7 +401,7 @@
         &--table {
             width: vwPC(1000px);
 
-            .row {
+            .outline-row {
                 margin-bottom: vwPC(2px);
 
                 .left,
@@ -433,6 +438,7 @@
 
         &--map {
             flex-grow: 1;
+            height: vwPC(1130px);
         }
     }
 
@@ -465,7 +471,7 @@
                 }
             }
 
-            .submit {
+            .contact-submit {
                 width: vwPC(400px);
                 margin-top: 0;
                 margin-left: auto;
@@ -481,7 +487,7 @@
     .info {
         margin-top: 60px;
 
-        .arc {
+        .info-arc {
             font-size: 20px;
             width: 800px;
         }
@@ -492,17 +498,17 @@
             width: 800px;
         }
 
-        .top {
+        .bussiness-top {
             padding: 60px 0;
 
-            .desc {
+            .bussiness-desc {
                 padding: 30px 60px;
                 margin-bottom: 50px;
             }
         }
 
-        .bot {
-            .department {
+        .bussiness-bottom {
+            .bussiness-department {
                 width: 50%;
                 float: left;
 
@@ -513,7 +519,7 @@
                     bottom: 25px;
                 }
 
-                .label {
+                .department-label {
                     margin-bottom: 15px;
                 }
 
@@ -521,7 +527,7 @@
                     font-size: 21px;
                 }
 
-                .summary {
+                .department-summary {
                     width: 400px;
                 }
             }
@@ -531,7 +537,7 @@
             clear: both;
             padding-top: 60px;
 
-            .card {
+            .depart-card {
                 padding: 30px;
                 margin-bottom: 20px;
 
@@ -547,7 +553,7 @@
                     }
                 }
 
-                .txt {
+                .depart-txt {
                     font-size: 20px;
                     overflow: hidden;
                 }
@@ -558,8 +564,8 @@
     .recruit {
         .recruit-box {
 
-            .link1,
-            .link2 {
+            .recruit-link1,
+            .recruit-link2 {
                 text-transform: uppercase;
                 font-size: 25px;
             }
@@ -572,10 +578,10 @@
             padding: 60px 0;
         }
 
-        .outline-table {
+        &--table {
             width: 1000px;
 
-            .row {
+            .outline-row {
                 margin-bottom: 2px;
 
                 .left,
@@ -609,21 +615,21 @@
                 text-align: center;
                 margin-top: 15px;
 
-                &:before {
-                    content: '';
-                    position: absolute;
-                    display: block;
-                    width: 150px;
-                    top: -10px;
-                    left: 50%;
-                    @include translate(-50%, 0);
-                    border-top: 2px solid #00008f;
-                }
+                // &:before {
+                //     content: '';
+                //     position: absolute;
+                //     display: block;
+                //     width: 150px;
+                //     top: -10px;
+                //     left: 50%;
+                //     @include translate(-50%, 0);
+                //     border-top: 2px solid #00008f;
+                // }
             }
         }
 
         &--map {
-            flex-grow: 1;
+            height: 1130px;
         }
     }
 
@@ -657,7 +663,7 @@
                 }
             }
 
-            .submit {
+            .contact-submit {
                 width: 400px;
                 margin-left: auto;
                 margin-right: 0;

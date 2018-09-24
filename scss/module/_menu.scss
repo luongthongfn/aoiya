@@ -187,7 +187,7 @@ nav.nav-container {
                         border: none;
                         border-bottom: vwPC(4) solid transparent;
 
-                        &:hover {
+                        &:not(.logo-pc):hover {
                             // color: #9fb328;
                             border-bottom-color: #00cdff;
                         }

@@ -2,6 +2,9 @@
     background: url(../img/mes-focus-bg.png);
     margin-top: vwSP(70px);
     margin-bottom: vwPC(110px);
+    .container{
+        @extend %wrapper3;
+    }
     &--bg{
         background: rgba(255,255,255,0.6);
         padding: vwSP(60px) 0 ;
@@ -16,6 +19,9 @@
     .has-image {
         text-align: center;
         margin: auto;
+        img{
+            width: vwSP(400px);
+        }
     }
     &--txt{
         color: #393939;
