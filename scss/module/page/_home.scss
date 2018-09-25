@@ -604,16 +604,19 @@
 
         &--heading {
             flex: 0 0 480px;
-
             .heading-top {
-                font-size: 30px;
+                font-size: 25px;
+                margin-bottom: 20px;
+                &:after{
+                    bottom: -15px;
+                }
             }
 
             .heading-bot {
                 position: relative;
-                font-size: 30px;
+                font-size: 25px;
                 text-align: center;
-                margin-top: 15px;
+                margin-top: 5px;
 
                 // &:before {
                 //     content: '';

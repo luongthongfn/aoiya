@@ -236,7 +236,7 @@ function myMap() {
                 featureType: 'road.highway',
                 elementType: 'labels.text.fill',
                 stylers: [{
-                    color: '#f3d19c'
+                    color: '#46889e'
                 }]
             },
             {
