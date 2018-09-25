@@ -8,7 +8,7 @@ if (isset($_POST['send_mail'])) {
 
     //Load composer's autoloader
     require 'vendor/autoload.php';
-
+    print_r($_POST);
     $mail = new PHPMailer(true); // Passing `true` enables exceptions
     try {
         //Server settings
@@ -35,7 +35,7 @@ if (isset($_POST['send_mail'])) {
         echo 'Gửi mail thành công!';
 
     } catch (Exception $e) {
-        echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~";
+        
         echo 'Message could not be sent.';
         echo 'Mailer Error: ' . $mail->ErrorInfo;
     }

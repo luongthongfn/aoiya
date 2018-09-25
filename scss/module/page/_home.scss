@@ -1,7 +1,8 @@
 .info {
-    .container{
+    .container {
         @extend %wrapper1
     }
+
     .info-arc {
         font-size: vwSP(20);
         margin-bottom: vwSP(20);
@@ -13,9 +14,10 @@
 }
 
 .bussiness {
-    .container{
+    .container {
         @extend %wrapper1;
     }
+
     .bussiness-top {
         text-align: center;
         background: #ecf8fc;
@@ -154,9 +156,10 @@
 
 .outline {
 
-    .container{
+    .container {
         @extend %wrapper2;
     }
+
     .outline-bg {
         background: url(../img/depart-content-bg.png);
         padding: vwSP(60) 0;
@@ -256,8 +259,11 @@
     }
 
     &--form {
+        position: relative;
+
         label {
             display: block;
+            position: relative;
             margin-bottom: vwSP(15);
 
             span {
@@ -293,6 +299,51 @@
                 font-size: 30px;
             }
         }
+
+        .required-notice {
+            color: #ff0000;
+            padding: 10px;
+        }
+
+        #js_mail_result {
+            display: none;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: transparentize(#fff, .3);
+
+            &.show {
+                display: block;
+            }
+
+            .pending {
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                top: 50%;
+                left: 50%;
+                border-radius: 60px;
+                animation: pending 1.5s ease-in-out infinite;
+                box-sizing: unset;
+
+            }
+        }
+    }
+}
+
+@keyframes pending {
+    from {
+        box-shadow: 0 0 0px 5px #333;
+    }
+
+    50% {
+        box-shadow: 0 0 0 10px #333;
+    }
+
+    to {
+        box-shadow: 0 0 0px 5px #333;
     }
 }
 
@@ -455,6 +506,7 @@
         &--form {
             label {
                 display: flex;
+                flex-wrap: wrap;
                 justify-content: flex-end;
                 margin-bottom: vwPC(20px);
 
@@ -569,7 +621,7 @@
                 text-transform: uppercase;
                 font-size: 25px;
             }
-            
+
         }
     }
 
@@ -604,10 +656,12 @@
 
         &--heading {
             flex: 0 0 480px;
+
             .heading-top {
                 font-size: 25px;
                 margin-bottom: 20px;
-                &:after{
+
+                &:after {
                     bottom: -15px;
                 }
             }
