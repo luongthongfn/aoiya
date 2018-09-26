@@ -91,7 +91,69 @@
         });
     })
 
+    //contact-form
+    $(function () {
+        $('#contact-submit').click(function (e) {
+            e.preventDefault();
+            $('.required-notice').remove();
+            var required = $('.contact--form input, .contact--form select, .contact--form textarea').filter('[required]:visible');
+            var checkRequired = true;
+            var requiredText = '<span class="required-notice">required!</span>';
+            var requiredEmail = '<span class="required-notice">Wrong email!</span>';
 
+            //loop field
+            required.each((i, elem) => {
+
+                var value = $(elem).val();
+                if (!value || value == "0") {
+                    checkRequired = false;
+                    $(elem).before(requiredText);
+                }
+
+                // validateEmail
+                if ($(elem).attr("type") == "email") {
+                    var emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                    if (!emailRegex.test(value)) {
+                        checkRequired = false;
+                        $(elem).before(requiredEmail);
+                    }
+                }
+
+            });
+
+            //return if required field  empty
+            if (!checkRequired) {
+                return;
+            }
+            var _this = $(this);
+            $('#js_mail_result').addClass('show');
+
+            $.ajax({
+                url: 'gmail.php',
+                type: 'POST',
+                data: {
+                    send_mail: true,
+                    request: $('#request').val(),
+                    name: $('#name').val(),
+                    company: $('#company').val(),
+                    email: $('#email').val(),
+                    question: $('#question').val(),
+                },
+                success: function (res) {
+                    $("#js_mail_result").html('<div class="mail_result">' + res + '<input type="reset" class="contact_reset" value="Done!"/></div>');
+                },
+                error: function (xhr, status, err) {
+                    $("#js_mail_result").html('<div class="mail_result">' + status + ': Something wrong!' + '<input type="reset" class="contact_reset" value="request again"/></div>');
+                    console.log(xhr, status, err);
+                }
+            })
+
+        })
+        $(document).on('click', '.contact_reset', function () {
+            $('#js_mail_result').removeClass('show')
+        })
+    })
+    
     //slider--------------------------------
     $(function () {
         $(".js-slider-main").owlCarousel({
@@ -128,6 +190,7 @@
         });
     })
 
+    
 
 })(jQuery)
 
@@ -142,8 +205,7 @@ function myMap() {
     var mapProp = {
         center: new google.maps.LatLng(myLatLng),
         zoom: 15,
-        styles: [
-            {
+        styles: [{
                 // "featureType": "all",
                 // featureType: "transit",
                 // elementType: "labels.icon",
@@ -236,7 +298,7 @@ function myMap() {
                 featureType: 'road.highway',
                 elementType: 'labels.text.fill',
                 stylers: [{
-                    color: '#f3d19c'
+                    color: '#46889e'
                 }]
             },
             {
