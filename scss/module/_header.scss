@@ -20,34 +20,24 @@ header {
 }
 
 .logo-sp {
-    padding: vwSP(18) vwSP(59) vwSP(11);
+    padding: vwSP(19) vwSP(59) vwSP(11);
     img {
-        width: vwSP(77);
+        width: vwSP(85);
         height: vwSP(70);
     }
 }
 
-.logo-pc {
-    vertical-align: middle;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
 
-    img {
-        width: 112px;
-        height: 93px;
-        margin-top: 18px;
-        margin-bottom: -20px;
-    }
-}
 
 .contact-header {
+    font-size: vwPC(14px);
     color: #fff;
-    background: #358dcc;
-    padding: vwPC(10) vwPC(20) vwPC(8);
+    background: #5A8CC9;
+    padding: vwPC(10px) vwPC(28.2px) vwPC(8px) vwPC(29.4px);
     border-radius: 3px;
     margin-left: auto;
-    margin-right: vwPC(20);
-    margin-top: vwPC(44);
+    margin-right: vwPC(20px);
+    margin-top: vwPC(37px);
 }
 
 .header-list {

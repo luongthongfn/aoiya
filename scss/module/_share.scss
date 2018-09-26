@@ -5,16 +5,19 @@
 
 //@import "../import/_fonts";
 %title {
-    font-family: "Times New Roman", serif;
-    color: #358dcc;
-    font-size: vwSP(35);
+    font-family: '游明朝', YuMincho, 'ヒラギノ明朝 ProN W3', 'Hiragino Mincho ProN', 'HG明朝E', 'ＭＳ Ｐ明朝', 'ＭＳ 明朝', serif; 
+    font-size: vwSP(32);
+    font-weight: 900;
+    line-height: 1;
+    color: #5A8CC9;
     text-transform: uppercase;
-    margin-bottom: vwSP(5);
+    margin-bottom: vwSP(0px);
 }
 
 %subtitle {
     color: #002040;
-    font-size: vwSP(25);
+    font-size: vwSP(24);
+    font-weight: 700;
     text-decoration: none;
     display: block;
     margin: 0;
@@ -69,26 +72,39 @@
     margin-left: auto;
     margin-right: auto;
 }
+.container{
+    margin-left: auto;
+    margin-right: auto;
+}
 %wrapper1 {
     width: vwSP(608);
-    margin: auto;
 }
 
 %wrapper2 {
     width: vwSP(635);
-    margin: auto;
 }
 
 %wrapper3 {
-    width: vwSP(631px);
-    margin: auto;
+    width: vwSP(630px);
 }
 
 .title-bg {
-    background: url(../img/title-bg.png) no-repeat;
-    background-position: 60% 70%;
-    padding: vwSP(60px) 0;
+    // background: url(../img/title-bg.png) no-repeat;
+    // background-position: 61.2% 68%;
+    // background-size: contain;
+    position: relative;
+    padding: vwSP(75px) 0 vwSP(81px);
     margin-bottom: vwSP(30px);
+    &:after{
+        content: '';
+        background: url(../img/title-bg.png) no-repeat center/contain;
+        position: absolute;
+        z-index: -1;
+        top: vwSP(89px);
+        left: vwSP(337px);
+        width: vwSP(200px);
+        height: vwSP(100px);
+    }
 }
 
 .read-more {
@@ -229,11 +245,14 @@
 */
 @include pc() {
     .title {
-        font-size: vwPC(25);
+        font-family:'arial', sans-serif;
+        font-weight: normal;
+        font-size: vwPC(24px);
     }
 
     .subtitle {
-        font-size: vwPC(20);
+        font-size: vwPC(13px);
+        margin-top: vwPC(10px);
     }
 
     .title2 {
@@ -251,6 +270,12 @@
     .title-bg {
         padding: vwPC(60) 0;
         margin-bottom: 0;
+        &:after{
+            top: vwPC(70px);
+            left: vwPC(695px);
+            width: vwPC(137px);
+            height: vwPC(68px);
+        }
     }
 
     %wrapper1 {

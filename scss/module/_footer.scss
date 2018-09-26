@@ -21,66 +21,75 @@ footer {
     text-align: center;
 }
 
-.view-map {
-    padding: vwSP(100) 0;
-    >a{
-        font-size: 0;
-        display: block;
-        margin-bottom: 30px;
-    }
-}
+
 .ft-top{
     position: relative;
-    background: #358dcc;
+    background: #5A8CC9;
     color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
     height: vwSP(169px);
     .ft-brand{
-        font-size: vwSP(20px);
+        font-size: vwSP(24px);
+        font-weight: bold;
         img{
             vertical-align: middle;
-            margin-right: vwSP(10);
+            margin-right: vwSP(27.3px);
         }
     }
     .go-top{
+        font-family: 'Roboto Condensed', sans-serif;
         position: absolute;
-        right: vwSP(20);
-        font-size: vwSP(30px);
+        top: vwSP(25px);
+        right: vwSP(28.8);
+        font-size: vwSP(19.77px);
         img{
-            width: vwSP(38px);
-            height: vwSP(68px);
+            width: vwSP(35.55px);
+            height: vwSP(59.3px);
         }
     }
 }
 .ft-mid{
-    background:url(../../img/ft-bg.png);
-    padding: vwSP(40) 0;
+    background: #5A8CC9;
+    padding: vwSP(40) 0 0;
     .ft-menu{
         li{
             a{
                 display: block;
                 font-size: vwSP(30);
                 color: #fff;
-                padding: vwSP(15) 0;
+                padding: vwSP(26px) 0;
             }
         }
     }
 }
 .ft-bot{
-    background: #358dcc;
-    min-height: vwSP(150);
-    padding-top: vwSP(30);
+    background: url(../img/cloud-bg.png);
+    min-height: vwSP(540px);
+    padding-top: vwSP(30px);
+    .ft-contact{
+        margin-bottom: vwSP(43px);
+        a{
+            color: #fff;
+            font-size: vwSP(30px);
+        }
+    }
+    .ft-logo{
+        img{
+            margin-right: vwSP(-37px);
+        }
+    }
 }
 .copy-r {
-    font-size: vwSP(16);
+    font-family:'roboto condensed', sans-serif;
+    font-size: vwSP(20);
     color: #fff;
     text-align: center;
+    margin-top: vwSP(123px);
     a {
         color: #fff;
         text-decoration: none;
-        text-transform: uppercase;
         &:hover {
             color: #ccc;
         }
@@ -96,16 +105,7 @@ footer {
     footer {
         text-align: left;
     }
-    .view-map{
-        padding: vwPC(60px) 0;
-        display: flex;
-        >a{
-            width: 50%;
-            &:first-child{
-                margin-right: 40px;
-            }
-        }
-    }
+    
     .ft-bg{
         position: relative;
         transform: perspective(1px);

@@ -4,10 +4,11 @@
     }
 
     .info-arc {
-        font-size: vwSP(20);
+        font-size: vwSP(28);
         margin-bottom: vwSP(20);
 
         .info-time {
+            color: #747474;
             margin-bottom: vwSP(10);
         }
     }
@@ -15,111 +16,70 @@
 
 .bussiness {
     .container {
-        @extend %wrapper1;
+        @extend %wrapper3;
     }
 
     .bussiness-top {
         text-align: center;
-        background: #ecf8fc;
+        background: url(../img/bussiness-bg.png);
+        background-size: cover;
         padding: vwSP(60) 0;
 
         .bussiness-desc {
-            background: #f5fcfe;
-            font-size: vwSP(25px);
+            color: #333;
+            background: transparentize(#fff, .5);
+            font-size: vwSP(28px);
             text-align: left;
             padding: vwSP(40) vwSP(60);
-            box-shadow: 0 0 5px transparentize(#000, .8);
+            box-shadow: 0 2px 6px transparentize(#000, .84);
             margin-bottom: vwSP(80);
+            border-radius: 4px;
         }
     }
 
     .bussiness-department {
-        position: relative;
-        background: url(../img/depart-bg.png) center center no-repeat;
-        background-size: 100% 100%;
-        text-align: center;
-        padding: 0 vwSP(15) vwSP(20);
-        transform: perspective(1px) translateZ(0);
-        border: 2px solid #fff;
-
-        &:after {
-            content: '';
-            position: absolute;
-            z-index: -1;
-            top: vwSP(20);
-            right: vwSP(20);
-            bottom: vwSP(21);
-            left: vwSP(20);
-            border: 2px solid #fff;
-        }
-
-        .department-label {
-            position: relative;
-            display: inline-block;
-            margin-bottom: vwSP(15);
-
-            .dp-mid-center {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                @include translate(-50%, -50%);
-                color: #fff;
-                font-size: vwSP(20);
-                text-transform: uppercase;
-            }
-        }
-
-        .department-summary {
-            width: vwSP(433);
-            margin: auto;
-
-            &--heading {
-                color: #358dcc;
-                margin-bottom: vwSP(10);
-            }
-        }
-
-        .arrow-down {
-            img {
-                margin-top: vwSP(10);
-                margin-bottom: vwSP(10);
-            }
-        }
+        font-size: 0;
     }
 
     .depart-content {
         background: url(../img/depart-content-bg.png);
         padding: vwSP(60) 0 vwSP(30);
-
         .depart-card {
             background: #fff;
-            padding: vwSP(40);
-            margin-bottom: vwSP(40);
+            padding: vwSP(46.1px);
+            margin-bottom: vwSP(43px);
             border-radius: 4px;
-            box-shadow: 0 0 5px transparentize(#000, .9);
+            box-shadow: 0 2px 6px transparentize(#000, .84);
 
             &--heading {
                 color: #00008f;
-                font-size: vwSP(30);
-                margin-bottom: vwSP(30);
+                font-size: vwSP(32);
+                font-weight: 700;
+                margin-bottom: vwSP(20);
 
                 .icon {
                     display: inline-block;
                     vertical-align: middle;
                     width: vwSP(90);
                     height: vwSP(90);
-                    background: #358dcc;
+                    background: #5A8CC9;
                     display: inline-flex;
                     justify-content: center;
                     align-items: center;
                     border-radius: 4px;
-                    box-shadow: 0 1px 2px transparentize(#000, .5);
+                    box-shadow: 0 1px 3px transparentize(#000, .84);
                     margin-right: vwSP(15px);
+                    img{
+                        width: vwSP(45px);
+                        height: vwSP(51px);
+                    }
                 }
             }
 
             .depart-txt {
-                font-size: vwSP(30);
+                font-size: vwSP(28);
+                line-height: vwSP(60px);
+                font-weight: 500;
             }
         }
     }
@@ -162,19 +122,20 @@
 
     .outline-bg {
         background: url(../img/depart-content-bg.png);
-        padding: vwSP(60) 0;
+        padding: vwSP(72) 0 vwSP(80px);
     }
 
     &--table {
         .outline-row {
             display: flex;
-            margin-bottom: vwSP(10);
+            margin-bottom: vwSP(6px);
 
             .left,
             .right {
+                font-size: vwSP(24px);
                 min-height: vwSP(90);
-                padding: vwSP(20) vwSP(15);
-                box-shadow: 0 0 6px transparentize(#000, .9);
+                padding: vwSP(13) vwSP(14);
+                box-shadow: 0 2px 6px transparentize(#000, .84);
             }
 
             .left {
@@ -201,7 +162,7 @@
         text-align: center;
         background: url(../img/access-bg.png);
         background-size: cover;
-        min-height: vwSP(120);
+        min-height: vwSP(144.33px);
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -211,14 +172,14 @@
         .heading-top {
             position: relative;
             display: inline-block;
-            font-size: vwSP(30);
+            font-size: vwSP(26);
             font-weight: bold;
-            margin-bottom: vwSP(20px);
+            margin-bottom: vwSP(10px);
 
             &:after {
                 content: '';
                 position: absolute;
-                bottom: vwSP(-10px);
+                bottom: vwSP(-5px);
                 left: 50%;
                 @include translate(-50%, 0);
                 width: 90%;
@@ -227,6 +188,8 @@
         }
 
         .heading-bot {
+            font-family: '游明朝', YuMincho, 'ヒラギノ明朝 ProN W3', 'Hiragino Mincho ProN', 'HG明朝E', 'ＭＳ Ｐ明朝', 'ＭＳ 明朝', serif; 
+            font-size: vwSP(20px);
             font-weight: bold;
             text-align: center;
             color: #00008f;
@@ -236,6 +199,7 @@
     &--map {
         background: #000;
         height: vwSP(600px);
+        filter: grayscale(80%) hue-rotate(210deg);
     }
 }
 
@@ -247,13 +211,14 @@
 
     &--wrapper {
         width: vwSP(630);
-        padding: vwSP(60) 0;
+        padding: vwSP(69px) 0;
         margin: auto;
     }
 
     .form-name {
         text-align: center;
-        font-size: vwSP(25);
+        font-size: vwSP(20);
+        font-weight: bold;
         color: #358dcc;
         margin-bottom: vwSP(20);
     }
@@ -265,12 +230,12 @@
             
             display: block;
             position: relative;
-            margin-bottom: vwSP(15);
+            margin-bottom: vwSP(10);
 
             span {
                 white-space: nowrap;
                 display: block;
-                font-size: vwSP(30);
+                font-size: vwSP(28);
                 font-weight: bold;
                 padding-bottom: vwSP(10);
             }
@@ -279,23 +244,27 @@
         input,
         select,
         textarea {
-            color: #ccc;
+            font-size: vwSP(20.4px);
+            color: #333;
             display: block;
             width: 100%;
             padding: 15px 20px;
-            border: 1px solid #eee;
+            border: 1px solid #EDEDED;
         }
 
         .contact-submit {
+            font-size: 28px;
+            font-weight: bold;
             display: block;
-            width: vwSP(500);
-            background: #358dcc;
             color: #fff;
+            width: vwSP(500);
+            background: #5A8CC9;
+            padding: vwSP(12px) vwSP(23px) vwSP(17px);
             border: none;
-            padding: vwSP(15) vwSP(20);
             border-radius: 5px;
             margin: auto;
             margin-top: vwSP(60px);
+            box-shadow: 0px 1px 5px transparentize(#000, .75);
 
             .fa {
                 font-size: 30px;
@@ -348,7 +317,14 @@
         box-shadow: 0 0 0px 5px #333;
     }
 }
-
+.view-map {
+    padding: vwSP(100) 0 vwSP(111px);
+    >a{
+        font-size: 0;
+        display: block;
+        margin-bottom: 30px;
+    }
+}
 //pc screen
 @include pc() {
     .info {
@@ -575,6 +551,16 @@
                         background: #1d6192;
                     }
                 }
+            }
+        }
+    }
+    .view-map{
+        padding: vwPC(60px) 0;
+        display: flex;
+        >a{
+            width: 50%;
+            &:first-child{
+                margin-right: 40px;
             }
         }
     }

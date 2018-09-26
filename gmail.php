@@ -26,8 +26,8 @@ if (isset($_POST['send_mail'])) {
         $mail->Port = 465; // TCP port to connect to
 
         //Recipients
-        $mail->setFrom('from@me.com', 'Mailer');
-        $mail->addAddress($email, $name); // Add a recipient
+        $mail->setFrom($email, $name);
+        $mail->addAddress('luongthongvfu@gmail.com'); // Add a recipient
 
         //Content
         $mail->isHTML(true); // Set email format to HTML

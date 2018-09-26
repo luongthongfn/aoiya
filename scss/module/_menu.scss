@@ -11,7 +11,8 @@
     width: 100%;
     max-width: 100%;
     background: transparentize(#fff, 0);
-    border-bottom: 1px solid #ccc;
+    // border-bottom: 1px solid #ccc;
+    box-shadow: 0 0px 6px transparentize(#000, .84);
 
 }
 
@@ -165,7 +166,7 @@ nav.nav-container {
             background: none;
             transform: none;
             margin-left: auto;
-            margin-right: vwPC(-220);
+            margin-right: vwPC(-176px);
 
             ul {
                 background: none;
@@ -175,15 +176,14 @@ nav.nav-container {
 
                 li {
                     display: inline-block;
-                    font-size: 14px;
-                    padding: 0 10px;
+                    padding: 0 vwPC(23px);
 
                     a {
-                        font-size: vwPC(16);
+                        font-size: vwPC(14);
                         line-height: vwPC(15);
                         color: #000;
                         text-decoration: none;
-                        padding: vwPC(28) vwPC(18) vwPC(12);
+                        padding: vwPC(28) vwPC(18) vwPC(23);
                         border: none;
                         border-bottom: vwPC(4) solid transparent;
 
@@ -196,6 +196,18 @@ nav.nav-container {
                             content: none;
                         }
                     }
+                }
+            }
+
+            .logo-pc {
+                vertical-align: middle;
+                padding-top: 0;
+                padding-bottom: 0;
+                img {
+                    width: vwPC(121px);
+                    height: vwPC(99px);
+                    margin-top: 11px;
+                    margin-bottom: -20px;
                 }
             }
         }
