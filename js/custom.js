@@ -104,19 +104,22 @@
 
             //loop field
             required.each((i, elem) => {
-
-                var value = $(elem).val();
+                var $elem = $(elem);
+                $elem.attr('style','');
+                var value = $elem.val();
                 if (!value || value == "0") {
                     checkRequired = false;
-                    $(elem).before(requiredText);
+                    $elem.css('border-color','#ff0000');
+                    $elem.before(requiredText);
                 }
 
                 // validateEmail
-                if ($(elem).attr("type") == "email") {
+                if ($elem.attr("type") == "email") {
                     var emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                     if (!emailRegex.test(value)) {
                         checkRequired = false;
-                        $(elem).before(requiredEmail);
+                        $elem.css('border-color','#ff0000');
+                        $elem.before(requiredEmail);
                     }
                 }
 

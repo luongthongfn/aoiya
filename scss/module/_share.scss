@@ -397,7 +397,16 @@
     .subtitle2 {
         font-size: (20px);
     }
-
+    .title-bg {
+        padding: (60px) 0;
+        margin-bottom: 0;
+        &:after{
+            top: (70px);
+            left: 48.5%;
+            width: (137px);
+            height: (68px);
+        }
+    }
     .heading {
         padding: 60px 0;
     }

@@ -14,6 +14,7 @@
 </head>
 
 <body>
+
     <header>
         <section id="menu">
             <div class="navbar sticky-header fixed clearfix">
@@ -112,22 +113,22 @@
 
             <div class="bussiness-bottom">
                 <div class="bussiness-department">
-                    <a href="#agent">
+                    <a href="#agent" class="go-to">
                         <img src="img/agent.png" alt="">
                     </a>
                 </div>
                 <div class="bussiness-department">
-                    <a href="#humanresource">
+                    <a href="#humanresource" class="go-to">
                         <img src="img/hr.png" alt="">
                     </a>
                 </div>
                 <div class="bussiness-department">
-                    <a href="#evaluation">
+                    <a href="#evaluation" class="go-to">
                         <img src="img/evaluation.png" alt="">
                     </a>
                 </div>
                 <div class="bussiness-department">
-                    <a href="#operation">
+                    <a href="#operation" class="go-to">
                         <img src="img/operation.png" alt="">
                     </a>
                 </div>
@@ -346,7 +347,7 @@
                         </label>
                         <label>
                             <span>お問い合わせ内容</span>
-                            <textarea name="question" id="question" cols="30" rows="10" required></textarea>
+                            <textarea name="question" id="question" cols="30" rows="7" required></textarea>
                         </label>
                         <button type="submit" class="contact-submit" id="contact-submit">送信</button>
                         <div id="js_mail_result" class="">
@@ -357,51 +358,59 @@
                 </div>
             </div>
         </section> <!-- end #contact -->
-
+        <section class="view-map">
+            <a href=""><img src="img/gg-view.png" alt="alt_text" class="w1"></a>
+            <a href=""><img src="img/map-view.png" alt="alt_text" class="w1"></a>
+        </section>
     </div><!-- End #content-->
 
     <footer>
-        <div class="view-map">
-            <a href=""><img src="img/gg-view.png" alt="alt_text" class="w1"></a>
-            <a href=""><img src="img/map-view.png" alt="alt_text" class="w1"></a>
-        </div>
 
-        <div class="ft-bg">
-            <div class="ft-bg--wrapper containerS">
-                <section class="ft-top">
-                    <div class="ft-brand">
-                        <img src="img/logo-ft.png" alt="alt_text">
-                        <span>葵屋 株式会社
-                        </span>
-                    </div>
-                    <a class="go-top show-sp">
-                        <img src="img/arrow-up.png" alt="alt_text">
-                        <p>PAGE TOP</p>
-                    </a>
-                    <div class="clb20"></div>
-                    <div class="show-pc">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium non necessitatibus labore
-                        omnis ipsum aspernatur error quo, dicta atque consequatur?
-                    </div>
-                </section>
+        <div class="ft-wrapper">
 
-                <section class="ft-mid">
-                    <ul class="ft-menu">
+            <div class="ft-top">
+                <div class="floatright-pc">
+                    <div class="ft-logo-brand">
+                        <div class="ft-brand">
+                            <img src="img/logo-ft.png" alt="alt_text">
+                            <span>葵屋 株式会社
+                            </span>
+                        </div>
+                        <a class="go-top show-sp">
+                            <img src="img/arrow-up.png" alt="alt_text">
+                            <p>PAGE TOP</p>
+                        </a>
+                        <div class="show-pc">
+                            〒210−0023 神奈川県川崎市川崎区小川町15-13 川崎トーセイビル 8F <br>
+                            TEL. 044-221-9662 MAIL. info@aoiyakk.com
+                        </div>
+                    </div>
+                    <ul class="ft-menu show-pc">
                         <li><a href="#bussiness" class=" go-to">事業内容</a></li>
                         <li><a href="#recruit" class=" go-to">採用情報</a></li>
                         <li><a href="#outline" class=" go-to">会社概要</a></li>
                         <li><a href="#access" class=" go-to">アクセス</a></li>
+                        <li><a href="#contact" class=" go-to show-pc">お問い合わせ</a></li>
                     </ul>
-                </section>
-
-                <section class="ft-bot">
-                    <div class="ft-contact">
-                        <a href="#contact" class=" go-to">お問い合わせ</a>
-                    </div>
-                    <div class="ft-logo"> <img src="img/AOIYA.png" alt="alt_text"> </div>
-                    <div class="copy-r">Copyright (C) 2017 <a href="">Aoiya</a> kk All Rights Reserved</div>
-                </section>
+                </div>
             </div>
+
+
+            <section class="ft-bot">
+                <ul class="ft-menu show-sp">
+                    <li><a href="#bussiness" class=" go-to">事業内容</a></li>
+                    <li><a href="#recruit" class=" go-to">採用情報</a></li>
+                    <li><a href="#outline" class=" go-to">会社概要</a></li>
+                    <li><a href="#access" class=" go-to">アクセス</a></li>
+                    <li><a href="#contact" class=" go-to show-pc">お問い合わせ</a></li>
+                </ul>
+                <div class="ft-contact show-sp">
+                    <a href="#contact" class=" go-to">お問い合わせ</a>
+                </div>
+                <div class="ft-logo"> <img src="img/AOIYA.png" alt="alt_text"> </div>
+                <div class="copy-r">Copyright (C) 2017 <a href="">Aoiya</a> kk All Rights Reserved</div>
+            </section>
+
         </div>
 
     </footer>

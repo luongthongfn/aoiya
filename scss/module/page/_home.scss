@@ -16,7 +16,7 @@
 
 .bussiness {
     .container {
-        @extend %wrapper3;
+        @extend %wrapper1;
     }
 
     .bussiness-top {
@@ -35,15 +35,26 @@
             margin-bottom: vwSP(80);
             border-radius: 4px;
         }
+        .diagram{
+            width: vwSP(630px);
+        }
     }
 
     .bussiness-department {
         font-size: 0;
+        img{
+            width: 100%;
+        }
     }
 
     .depart-content {
         background: url(../img/depart-content-bg.png);
         padding: vwSP(60) 0 vwSP(30);
+
+        .container {
+            @extend %wrapper3;
+        }
+
         .depart-card {
             background: #fff;
             padding: vwSP(46.1px);
@@ -69,9 +80,9 @@
                     border-radius: 4px;
                     box-shadow: 0 1px 3px transparentize(#000, .84);
                     margin-right: vwSP(15px);
-                    img{
+
+                    img {
                         width: vwSP(45px);
-                        height: vwSP(51px);
                     }
                 }
             }
@@ -188,7 +199,7 @@
         }
 
         .heading-bot {
-            font-family: '游明朝', YuMincho, 'ヒラギノ明朝 ProN W3', 'Hiragino Mincho ProN', 'HG明朝E', 'ＭＳ Ｐ明朝', 'ＭＳ 明朝', serif; 
+            font-family: '游明朝', YuMincho, 'ヒラギノ明朝 ProN W3', 'Hiragino Mincho ProN', 'HG明朝E', 'ＭＳ Ｐ明朝', 'ＭＳ 明朝', serif;
             font-size: vwSP(20px);
             font-weight: bold;
             text-align: center;
@@ -199,7 +210,7 @@
     &--map {
         background: #000;
         height: vwSP(600px);
-        filter: grayscale(80%) hue-rotate(210deg);
+        // filter: grayscale(80%) hue-rotate(210deg);
     }
 }
 
@@ -227,7 +238,7 @@
         position: relative;
 
         label {
-            
+
             display: block;
             position: relative;
             margin-bottom: vwSP(10);
@@ -317,21 +328,29 @@
         box-shadow: 0 0 0px 5px #333;
     }
 }
+
 .view-map {
     padding: vwSP(100) 0 vwSP(111px);
-    >a{
+
+    >a {
         font-size: 0;
         display: block;
         margin-bottom: 30px;
     }
 }
+
 //pc screen
 @include pc() {
     .info {
-        margin-top: vwPC(60);
+        margin-top: vwPC(35px);
 
         .info-arc {
-            font-size: vwPC(20);
+            font-size: vwPC(15px);
+            margin-bottom: vwPC(25px);
+
+            .info-time {
+                margin-bottom: vwPC(10px);
+            }
         }
     }
 
@@ -340,35 +359,47 @@
             padding: vwPC(80) 0 vwPC(60);
 
             .bussiness-desc {
-                font-size: vwPC(20px);
-                padding: vwPC(30) vwPC(60);
-                margin-bottom: vwPC(50px);
+                font-size: vwPC(15px);
+                line-height: vwPC(30px);
+                padding: vwPC(37px) vwPC(50px) vwPC(27px);
+                margin-bottom: vwPC(55px);
+            }
+
+            .diagram {
+                width: vwPC(680);
             }
         }
 
         .bussiness-bottom {
+            display: flex;
+            flex-wrap: wrap;
             .bussiness-department {
                 width: 50%;
                 float: left;
-
-                &:after {
-                    top: vwPC(22);
-                    right: vwPC(21);
-                    left: vwPC(21);
-                    bottom: vwPC(25);
+                a{
+                    display: block;
+                    border: 1px solid #fff;
+                    margin-top: -1px;
+                    margin-left: -1px;
                 }
+                // &:after {
+                //     top: vwPC(22);
+                //     right: vwPC(21);
+                //     left: vwPC(21);
+                //     bottom: vwPC(25);
+                // }
 
-                .department-label {
-                    margin-bottom: vwPC(15px);
-                }
+                // .department-label {
+                //     margin-bottom: vwPC(15px);
+                // }
 
-                .dp-mid-center {
-                    font-size: vwPC(21px);
-                }
+                // .dp-mid-center {
+                //     font-size: vwPC(21px);
+                // }
 
-                .department-summary {
-                    width: vwPC(400);
-                }
+                // .department-summary {
+                //     width: vwPC(400);
+                // }
             }
         }
 
@@ -378,10 +409,11 @@
 
             .depart-card {
                 padding: vwPC(30px);
+                padding-bottom: 25px;
                 margin-bottom: vwPC(20px);
 
                 &--heading {
-                    font-size: vwPC(30px);
+                    font-size: vwPC(18px);
                     margin-bottom: vwPC(5px);
 
                     .icon {
@@ -389,11 +421,16 @@
                         height: vwPC(70px);
                         float: left;
                         margin-right: vwPC(30px);
+                        img{
+                            width: vwPC(30px);
+                            height: vwPC(34px);
+                        }
                     }
                 }
 
                 .depart-txt {
-                    font-size: vwPC(20px);
+                    font-size: vwPC(15px);
+                    line-height: vwPC(30px);
                     overflow: hidden;
                 }
             }
@@ -435,6 +472,7 @@
 
                 .left,
                 .right {
+                    font-size: vwPC(16px);
                     min-height: vwPC(60px);
                     padding: vwPC(20px) vwPC(18px);
                 }
@@ -452,6 +490,7 @@
         }
 
         &--heading {
+            background-image: url(../img/access-heading-bg-pc.png);
             flex: 0 0 vwPC(480px);
 
             .heading-top {
@@ -467,18 +506,19 @@
 
         &--map {
             flex-grow: 1;
-            height: vwPC(1130px);
+            height: vwPC(640px);
         }
     }
 
     .contact {
         &--wrapper {
             width: vwPC(563px);
-            padding: vwPC(40px) 0 vwPC(80px);
+            padding: vwPC(43px) 0 vwPC(80px);
         }
 
         .form-name {
-            font-size: vwPC(16px);
+            font-size: vwPC(12px);
+            margin-bottom: vwPC(20px);
         }
 
         &--form {
@@ -486,41 +526,50 @@
                 display: flex;
                 flex-wrap: nowrap;
                 justify-content: flex-end;
-                margin-bottom: vwPC(20px);
+                margin-bottom: vwPC(16px);
 
                 span {
-                    font-size: vwPC(20px);
+                    font-size: vwPC(16px);
                     text-align: right;
+                    padding-top: vwPC(13px);
+                    padding-bottom: 0;
                 }
 
                 input,
                 select,
                 textarea {
+                    font-size: vwPC(16px);
                     flex: 0 0 vwPC(400px);
+                    padding: vwPC(10px) vwPC(19px) vwPC(8px);
                     margin-left: vwPC(20px);
                 }
             }
 
             .contact-submit {
+                font-size: vwPC(20px);
                 width: vwPC(400px);
                 margin-top: 0;
                 margin-left: auto;
                 margin-right: 0;
-                padding: vwPC(15px) 0;
+                padding: vwPC(15px) 0 vwPC(13px);
             }
+
             .required-notice {
                 position: absolute;
                 left: 100%;
                 top: 0;
                 color: #ff0000;
                 padding: 10px;
+                + .required-notice{
+                    display: none;
+                }
             }
-    
+
             #js_mail_result {
                 &.show {
                     display: block;
                 }
-    
+
                 .pending {
                     position: absolute;
                     width: 20px;
@@ -530,9 +579,10 @@
                     border-radius: 60px;
                     animation: pending 1.5s ease-in-out infinite;
                     box-sizing: unset;
-    
+
                 }
-                .mail_result{
+
+                .mail_result {
                     text-align: center;
                     font-size: 30px;
                     color: #358dcc;
@@ -544,22 +594,27 @@
                     left: 50%;
                     @include translate(-50%, -50%);
                 }
-                .contact_reset{
+
+                .contact_reset {
                     background: #358dcc;
                     color: #fff;
-                    &:hover{
+
+                    &:hover {
                         background: #1d6192;
                     }
                 }
             }
         }
     }
-    .view-map{
+
+    .view-map {
         padding: vwPC(60px) 0;
         display: flex;
-        >a{
+
+        >a {
             width: 50%;
-            &:first-child{
+
+            &:first-child {
                 margin-right: 40px;
             }
         }
@@ -569,76 +624,77 @@
 //large screen
 @include lg() {
     .info {
-        margin-top: 60px;
+        margin-top: (35px);
 
         .info-arc {
-            font-size: 20px;
-            width: 800px;
+            font-size: (15px);
+            margin-bottom: (25px);
+
+            .info-time {
+                margin-bottom: (10px);
+            }
         }
     }
 
     .bussiness {
-        &--wrapper {
-            width: 800px;
-        }
-
         .bussiness-top {
-            padding: 60px 0;
+            padding: (80px) 0 (60px);
 
             .bussiness-desc {
-                padding: 30px 60px;
-                margin-bottom: 50px;
+                font-size: (15px);
+                line-height: (30px);
+                padding: (37px) (50px) (27px);
+                margin-bottom: (55px);
+            }
+
+            .diagram {
+                width: (680px);
             }
         }
 
         .bussiness-bottom {
+            display: flex;
+            flex-wrap: wrap;
             .bussiness-department {
                 width: 50%;
                 float: left;
-
-                &:after {
-                    top: 22px;
-                    right: 21px;
-                    left: 21px;
-                    bottom: 25px;
-                }
-
-                .department-label {
-                    margin-bottom: 15px;
-                }
-
-                .dp-mid-center {
-                    font-size: 21px;
-                }
-
-                .department-summary {
-                    width: 400px;
+                a{
+                    display: block;
+                    border: 1px solid #fff;
+                    margin-top: -1px;
+                    margin-left: -1px;
                 }
             }
         }
 
         .depart-content {
             clear: both;
-            padding-top: 60px;
+            padding-top: (60px);
 
             .depart-card {
-                padding: 30px;
-                margin-bottom: 20px;
+                padding: (30px);
+                padding-bottom: 25px;
+                margin-bottom: (20px);
 
                 &--heading {
-                    font-size: 30px;
-                    margin-bottom: 5px;
+                    font-size: (18px);
+                    margin-bottom: (5px);
 
                     .icon {
-                        width: 70px;
-                        height: 70px;
+                        width: (70px);
+                        height: (70px);
                         float: left;
-                        margin-right: 30px;
+                        margin-right: (30px);
+                        img{
+                            width: (30px);
+                            height: (34px);
+                        }
                     }
                 }
 
                 .depart-txt {
-                    font-size: 20px;
+                    font-size: (15px);
+                    line-height: (30px);
                     overflow: hidden;
                 }
             }
@@ -651,27 +707,38 @@
             .recruit-link1,
             .recruit-link2 {
                 text-transform: uppercase;
-                font-size: 25px;
+                font-size: (25px);
+                width: (378px);
             }
 
+            .recruit-link1 {
+                top: (200px);
+                left: (300px);
+            }
+
+            .recruit-link2 {
+                top: (282px);
+                right: (260px);
+            }
         }
     }
 
     .outline {
         .outline-bg {
-            padding: 60px 0;
+            padding: (60) 0;
         }
 
         &--table {
-            width: 1000px;
+            width: (1000px);
 
             .outline-row {
-                margin-bottom: 2px;
+                margin-bottom: (2px);
 
                 .left,
                 .right {
-                    min-height: 60px;
-                    padding: 20px 18px;
+                    font-size: (16px);
+                    min-height: (60px);
+                    padding: (20px) (18px);
                 }
 
                 .left {
@@ -687,76 +754,132 @@
         }
 
         &--heading {
-            flex: 0 0 480px;
+            background-image: url(../img/access-heading-bg-pc.png);
+            flex: 0 0 (480px);
 
             .heading-top {
-                font-size: 25px;
-                margin-bottom: 20px;
-
-                &:after {
-                    bottom: -15px;
-                }
+                font-size: (30px);
             }
 
             .heading-bot {
                 position: relative;
-                font-size: 25px;
+                font-size: (30px);
                 text-align: center;
-                margin-top: 5px;
-
-                // &:before {
-                //     content: '';
-                //     position: absolute;
-                //     display: block;
-                //     width: 150px;
-                //     top: -10px;
-                //     left: 50%;
-                //     @include translate(-50%, 0);
-                //     border-top: 2px solid #00008f;
-                // }
             }
         }
 
         &--map {
-            height: 1130px;
+            flex-grow: 1;
+            height: (640px);
         }
     }
 
     .contact {
         &--wrapper {
-            width: 563px;
-            padding: 40px 0 80px;
+            width: (563px);
+            padding: (43px) 0 (80px);
         }
 
         .form-name {
-            font-size: 16px;
+            font-size: (12px);
+            margin-bottom: (20px);
         }
 
         &--form {
             label {
                 display: flex;
+                flex-wrap: nowrap;
                 justify-content: flex-end;
-                margin-bottom: 0;
+                margin-bottom: (16px);
 
                 span {
-                    font-size: 20px;
+                    font-size: (16px);
                     text-align: right;
+                    padding-top: (13px);
+                    padding-bottom: 0;
                 }
 
                 input,
                 select,
                 textarea {
-                    flex: 0 0 400px;
-                    margin-left: 20px;
-                    margin-bottom: 15px;
+                    font-size: (16px);
+                    flex: 0 0 (400px);
+                    padding: (10px) (19px) (8px);
+                    margin-left: (20px);
                 }
             }
 
             .contact-submit {
-                width: 400px;
+                font-size: (20px);
+                width: (400px);
+                margin-top: 0;
                 margin-left: auto;
                 margin-right: 0;
-                padding: 15px 0;
+                padding: (15px) 0 (13px);
+            }
+
+            .required-notice {
+                position: absolute;
+                left: 100%;
+                top: 0;
+                color: #ff0000;
+                padding: 10px;
+                + .required-notice{
+                    display: none;
+                }
+            }
+
+            #js_mail_result {
+                &.show {
+                    display: block;
+                }
+
+                .pending {
+                    position: absolute;
+                    width: 20px;
+                    height: 20px;
+                    top: 50%;
+                    left: 50%;
+                    border-radius: 60px;
+                    animation: pending 1.5s ease-in-out infinite;
+                    box-sizing: unset;
+
+                }
+
+                .mail_result {
+                    text-align: center;
+                    font-size: 30px;
+                    color: #358dcc;
+                    position: absolute;
+                    width: 100%;
+                    top: 50%;
+                    right: 50%;
+                    bottom: 50%;
+                    left: 50%;
+                    @include translate(-50%, -50%);
+                }
+
+                .contact_reset {
+                    background: #358dcc;
+                    color: #fff;
+
+                    &:hover {
+                        background: #1d6192;
+                    }
+                }
+            }
+        }
+    }
+
+    .view-map {
+        padding: (60px) 0;
+        display: flex;
+
+        >a {
+            width: 50%;
+
+            &:first-child {
+                margin-right: 40px;
             }
         }
     }

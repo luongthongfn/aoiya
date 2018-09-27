@@ -87,14 +87,28 @@ nav.nav-container {
     top: 100%;
     width: 100%;
     height: 100vh;
-    background-color: #707070;
+    background-color: #5A8CC9;
     @include translate(100%, 0);
     transition: all .3s;
 
     ul {
+        position: relative;
         width: 100%;
-        background: #fff;
+        background: url(../img/cloud-bg.png);
         padding-left: 0;
+        padding: vwSP(118px) 0;
+
+        &:after {
+            content: '';
+            background: url(../img/aoiya.png) center center no-repeat;
+            background-size: contain;
+            height: vwSP(100px);
+            position: absolute;
+            top: calc(100% + 40px);
+            left: 0;
+            right: 0;
+            text-align: center;
+        }
 
         li {
             display: block;
@@ -102,29 +116,33 @@ nav.nav-container {
 
             +li {
                 a {
-                    border-top: 2px solid #707070;
+                    // border-top: 2px solid #707070;
                 }
             }
 
             a {
                 display: block;
-                color: #707070;
+                color: #fff;
+                text-align: center;
                 font-size: vwSP(30);
                 line-height: vwSP(32);
                 padding: vwSP(39) vwSP(49) vwSP(29);
                 padding-left: vwSP(45);
 
-                &:after {
-                    font-family: "FontAwesome";
-                    content: "\f105";
-                    float: right;
-                    font-size: vwSP(50);
-                    line-height: .8;
-                    color: #707070;
-                }
+                // &:after {
+                //     content: "\f105";
+                //     content: none;
+                //     font-family: "FontAwesome";
+                //     float: right;
+                //     font-size: vwSP(50);
+                //     line-height: .8;
+                //     color: #707070;
+                // }
             }
         }
+
     }
+
 }
 
 .is-active {
@@ -172,7 +190,11 @@ nav.nav-container {
                 background: none;
                 text-align: center;
                 font-size: 0;
-                // padding-left: vwPC(276);
+                padding: 0;
+
+                &:after {
+                    content: none;
+                }
 
                 li {
                     display: inline-block;
@@ -203,11 +225,12 @@ nav.nav-container {
                 vertical-align: middle;
                 padding-top: 0;
                 padding-bottom: 0;
+
                 img {
                     width: vwPC(121px);
                     height: vwPC(99px);
-                    margin-top: 11px;
-                    margin-bottom: -20px;
+                    margin-top: vwPC(11px);
+                    margin-bottom: vwPC(-20px);
                 }
             }
         }
@@ -216,6 +239,7 @@ nav.nav-container {
     .navbar2 {
         .logo {
             padding: vwPC(14px) vwPC(25px) vwPC(11px);
+            border-bottom-width: 4px;
 
             img {
                 width: vwPC(88px);
@@ -230,8 +254,19 @@ nav.nav-container {
 }
 
 @include lg() {
-    .navbar nav.nav-container ul li a {
-        font-size: 16px;
+    .navbar nav.nav-container ul li {
+        padding: 0 (23px);
+        a {
+            font-size: 14px;
+            padding: (28px) (18px) (23px);
+        }
+    }
+
+    .navbar nav.nav-container .logo-pc img {
+        width: (121px);
+        height: (99px);
+        margin-top: (11px);
+        margin-bottom: (-20px);
     }
 
     .navbar2 {
