@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>aoiya</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="js/custom.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/owl.theme2.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -35,6 +35,7 @@
                         <li><a href="" class="logo-pc show-pc"><img class="" src="img/logo-header-pc.png" alt="alt_text"></a></li>
                         <li><a href="#outline" class="go-to">会社概要</a></li>
                         <li><a href="#access" class="go-to">アクセス</a></li>
+                        <li><a href="#contact" class="go-to show-sp">お問い合わせ</a></li>
                     </ul>
                 </nav>
                 <a href="#contact" class="contact-header go-to show-pc"><i class="fa fa-envelope"></i> お問い合わせ</a>
@@ -104,7 +105,10 @@
                 <div class="container">
                     <div class="bussiness-desc">
                         <p>
-                            様々に多様化した顧客のニーズに応えるべく、事業のセグメンテーションを行うことで、付加価値を提供していきます。様々に多様化した顧客のニーズに応えるべく、事業のセグメンテーションを行うことで、付加価値を提供していきます。様々に多様化した顧客のニーズに応えるべく、事業のセグメンテー
+                            様々に多様化した顧客のニーズに応える
+                            べく、事業のセグメンテーションを行うことで、付加価値を提供していきます。様々に多様化した顧客のニーズに応えるべく、事業のセグメンテーションを行うことで、付加価値を提供していきます。様々に多様化した顧客のニーズに応えるべく、事業のセグメンテーションを行う
+                            様々に多様化した顧客のニーズに応える
+
                         </p>
                     </div>
                     <img src="img/diagram.png" alt="alt_text" class="diagram">
@@ -310,7 +314,6 @@
                 <div class="access--map" id="googleMap">
                     <!-- <img src="img/map-area.png" alt="alt_text" class="w1"> -->
                 </div>
-                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDA4GSO0mBdxjmaNM-e30bVTrz_RrSeJJA&callback=myMap"></script>
             </div>
         </section> <!-- end #access -->
 
@@ -324,13 +327,15 @@
                 <div class="contact--wrapper container">
                     <h3 class="form-name">※全て必須項目です</h3>
                     <!-- ajax form url in custom.js-->
-                    <form class="contact--form" action="" method="POST">
+                    <form class="contact--form" id="contact--form" action="" method="POST">
                         <label>
                             <span>お問い合わせ項目</span>
                             <select name="request" id="request" value="" required>
-                                <option value="0">項目を選択してください</option>
-                                <option value="select2">Lorem ipsum dolor sit.</option>
-                                <option value="select3">Lorem ipsum dolor sit.</option>
+                                <option value="">項目を選択してください</option>
+                                <option value="select2">Lorem ipsum dolor sit.1</option>
+                                <option value="select3">Lorem ipsum dolor sit.2</option>
+                                <option value="select4">Lorem ipsum dolor sit.3</option>
+                                <option value="select5">Lorem ipsum dolor sit.4</option>
                             </select>
                         </label>
                         <label>
@@ -349,11 +354,55 @@
                             <span>お問い合わせ内容</span>
                             <textarea name="question" id="question" cols="30" rows="7" required></textarea>
                         </label>
-                        <button type="submit" class="contact-submit" id="contact-submit">送信</button>
-                        <div id="js_mail_result" class="">
-                            <div class="pending"></div>
-                        </div>
+                        <button type="submit" class="contact-submit" id="contact-submit">送信<i class="fa fa-spin"></i></button>
+
                     </form>
+                    <script>
+                        
+                    </script>
+
+                </div>
+                <div id="js_contact_confirm">
+                    <div class="contact--wrapper container">
+                        <div class="review-content review-request">
+                            <p class="review-title">お問い合わせ項目</p>
+                            <p class="review-text">
+                                テキストテキストテキストテキストテキスト
+                            </p>
+                        </div>
+                        <div class="review-content review-name">
+                            <p class="review-title">お名前</p>
+                            <p class="review-text">
+                                テキストテキスト
+                            </p>
+                        </div>
+                        <div class="review-content review-company">
+                            <p class="review-title">貴社名/部署名</p>
+                            <p class="review-text">
+                                テキストテキスト
+                            </p>
+                        </div>
+                        <div class="review-content review-email">
+                            <p class="review-title">メールアドレス</p>
+                            <p class="review-text">
+                                テキストテキスト
+                            </p>
+                        </div>
+                        <div class="review-content review-question">
+                            <p class="review-title">お問い合わせ内容</p>
+                            <p class="review-text">
+                                テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                            </p>
+                        </div>
+
+                        <div class="review-bottom">
+                            <div class="confirm-title">上記内容で送信しますか？</div>
+                            <div class="confirm-btn">
+                                <button class="btn_cancel_send">キャンセル</button>
+                                <button class="btn_accept_send">送信</button>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             </div>
@@ -365,7 +414,7 @@
     </div><!-- End #content-->
 
     <footer>
-
+        <a href="" id="go-top" class="show-pc"><i class="fa fa-angle-up"></i></a>
         <div class="ft-wrapper">
 
             <div class="ft-top">
@@ -408,15 +457,20 @@
                     <a href="#contact" class=" go-to">お問い合わせ</a>
                 </div>
                 <div class="ft-logo"> <img src="img/AOIYA.png" alt="alt_text"> </div>
-                <div class="copy-r">Copyright (C) 2017 <a href="">Aoiya</a> kk All Rights Reserved</div>
+                <div class="copy-r">Copyright (C) 2018 <a href="">Aoiya</a> KK All Rights Reserved.</div>
             </section>
 
         </div>
 
     </footer>
 
-    <a href="" id="go-top" class="show-pc"><i class="fa fa-angle-up"></i></a>
+    <!-- <a href="" id="go-top" class="show-pc"><i class="fa fa-angle-up"></i></a> -->
+
+    <!-- footer library -->
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/custom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDA4GSO0mBdxjmaNM-e30bVTrz_RrSeJJA&callback=myMap"></script>
 </body>
 
 </html>

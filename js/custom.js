@@ -1,22 +1,28 @@
 (function ($) {
+    //doccument.ready
     $(function () {
+        //go-top button
         $("#go-top, .go-top").click(function () {
             $("html, body").animate({
                 scrollTop: 0
             }, "slow");
             return false;
         });
+        $posToShow = $('.slide').height() - $(window).height() + 200;
         $(window).scroll(function () {
-            if ($(window).scrollTop() >= 800) {
+            if ($(window).scrollTop() >= $posToShow) {
                 $('#go-top').show();
             } else {
                 $('#go-top').hide();
             }
         });
 
+
+        //mobile nav button
         $(document).on('click', '.nav-toggle', function () {
             $('#menu').toggleClass('is-active');
         })
+
         //----sticky-header
         if ($('.sticky-header').length) {
             var _this = $('.sticky-header');
@@ -83,7 +89,7 @@
             $('#menu').removeClass('is-active');
             let target = $($(this).attr('href'));
             if (target.length) {
-                var fixedHeight = $('.fixed').height() || 0; 
+                var fixedHeight = $('.fixed').height() || 0;
                 var pos = target.offset().top - fixedHeight;
                 $("html, body").animate({
                     scrollTop: pos
@@ -94,70 +100,129 @@
 
     //contact-form
     $(function () {
-        $('#contact-submit').click(function (e) {
-            e.preventDefault();
-            $('.required-notice').remove();
-            var required = $('.contact--form input, .contact--form select, .contact--form textarea').filter('[required]:visible');
-            var checkRequired = true;
-            var requiredText = '<span class="required-notice">required!</span>';
-            var requiredEmail = '<span class="required-notice">Wrong email!</span>';
 
-            //loop field
-            required.each((i, elem) => {
-                var $elem = $(elem);
-                $elem.attr('style','');
-                var value = $elem.val();
-                if (!value || value == "0") {
-                    checkRequired = false;
-                    $elem.css('border-color','#ff0000');
-                    $elem.before(requiredText);
-                }
+        var $reqVal,
+            $nameVal,
+            $companyVal,
+            $emailVal,
+            $questionVal;
 
-                // validateEmail
-                if ($elem.attr("type") == "email") {
-                    var emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                    if (!emailRegex.test(value)) {
-                        checkRequired = false;
-                        $elem.css('border-color','#ff0000');
-                        $elem.before(requiredEmail);
-                    }
-                }
-
-            });
-
-            //return if required field  empty
-            if (!checkRequired) {
-                return;
-            }
-            var _this = $(this);
-            $('#js_mail_result').addClass('show');
+        //dialog confirm send mail
+        var submitCallBack = function () {
+            $('.contact-submit .fa').addClass('fa-spin fa-spinner');
 
             $.ajax({
                 url: 'gmail.php',
                 type: 'POST',
                 data: {
                     send_mail: true,
-                    request: $('#request').val(),
-                    name: $('#name').val(),
-                    company: $('#company').val(),
-                    email: $('#email').val(),
-                    question: $('#question').val(),
+                    request: $reqVal,
+                    name: $nameVal,
+                    company: $companyVal,
+                    email: $emailVal,
+                    question: $questionVal,
                 },
                 success: function (res) {
-                    $("#js_mail_result").html('<div class="mail_result">' + res + '<input type="reset" class="contact_reset" value="Done!"/></div>');
+                    $('.contact-submit .fa').removeClass('fa-spinner fa-spin').addClass('fa-check');
+                    document.getElementsByClassName("contact--form")[0].reset();
                 },
                 error: function (xhr, status, err) {
-                    $("#js_mail_result").html('<div class="mail_result">' + status + ': Something wrong!' + '<input type="reset" class="contact_reset" value="request again"/></div>');
                     console.log(xhr, status, err);
+                    $('.contact-submit .fa').removeClass('fa-spinner fa-spin').addClass('fa-exclamation');
                 }
             })
 
+        }
+
+        var closeCallBack = function () {
+            $('#js_mail_result').removeClass('show');
+        }
+
+        var setPreviewValue = function () {
+            $reqVal = $('#request').val();
+            $nameVal = $('#name').val();
+            $companyVal = $('#company').val();
+            $emailVal = $('#email').val();
+            $questionVal = $('#question').val();
+
+            $('.review-request .review-text').text($reqVal);
+            $('.review-name .review-text').text($nameVal);
+            $('.review-company .review-text').text($companyVal);
+            $('.review-email .review-text').text($emailVal);
+            $('.review-question .review-text').text($questionVal);
+        }
+
+        //validate
+        $.validator.setDefaults({
+            submitHandler: function () {
+                alert("submitted!");
+            }
+        });
+        $("#contact--form").validate({
+            rules: {
+                request: "required",
+                name: "required",
+                company: "required",
+                email: {
+                    required: true,
+                    email: true
+                },
+                question: {
+                    required: true,
+                    minlength: 2
+                }
+            },
+            messages: {
+                // request: "お問い合わせ項目を選択してください。",
+                request: "",
+                name   : "お名前を入力してください。",
+                company: "貴社名を入力してください。",
+                email  : "メールアドレスを入力してください。",
+                question: {
+                    required: "お問い合わせ内容を入力してください。",
+                    minlength: "少なくとも二文字以上"
+                }
+            },
+            errorElement: "span",
+            errorPlacement: function (error, element) {
+                // Add the `help-block` class to the error element
+                error.addClass("required-notice");
+
+                if (element.prop("type") === "checkbox") {
+                    error.insertAfter(element.parent("label"));
+                } else {
+                    error.insertAfter(element);
+                }
+            },
+            highlight: function (element, errorClass, validClass) {
+                $(element).addClass("has-error");
+            },
+            unhighlight: function (element, errorClass, validClass) {
+                $(element).removeClass("has-error")
+            },
+            submitHandler: function () {
+                setPreviewValue();
+                $('#js_contact_confirm').addClass('show');
+            }
+        });
+        
+        // --------------------- add event ---------------------------------
+        // --------------------- add event ---------------------------------
+        $('.btn_accept_send').click(function () {
+            submitCallBack();
+            $('#js_contact_confirm').removeClass('show');
         })
+
+        $('.btn_cancel_send').click(function () {
+            closeCallBack();
+            $('#js_contact_confirm').removeClass('show');
+        })
+
         $(document).on('click', '.contact_reset', function () {
             $('#js_mail_result').removeClass('show')
         })
     })
-    
+
     //slider--------------------------------
     $(function () {
         $(".js-slider-main").owlCarousel({
@@ -193,11 +258,7 @@
             margin: 0,
         });
     })
-
-    
-
 })(jQuery)
-
 
 //maps
 function myMap() {
@@ -208,140 +269,68 @@ function myMap() {
 
     var mapProp = {
         center: new google.maps.LatLng(myLatLng),
-        zoom: 17,
-        // styles: [
-        //     {
-        //         // "featureType": "all",
-        //         // featureType: "transit",
-        //         // elementType: "labels.icon",
-        //         // "stylers": [
-        //         //   { "color": "#C0C0C0" }
-        //         // ]
-        //     },
-        //     {
-        //         elementType: 'geometry',
-        //         stylers: [{
-        //             color: '#f3f7f8'
-        //         }]
-        //     },
-        //     {
-        //         elementType: 'labels.text.stroke',
-        //         stylers: [{
-        //             color: '#ffffff'
-        //         }]
-        //     },
-        //     {
-        //         elementType: 'labels.text.fill',
-        //         stylers: [{
-        //             color: '#46889e'
-        //         }]
-        //     },
-        //     {
-        //         featureType: 'administrative.locality',
-        //         elementType: 'labels.text.fill',
-        //         stylers: [{
-        //             color: '#6199ad'
-        //         }]
-        //     },
-        //     {
-        //         featureType: 'poi',
-        //         elementType: 'labels.text.fill',
-        //         stylers: [{
-        //             color: '#6199ad'
-        //         }]
-        //     },
-        //     {
-        //         featureType: 'poi.park',
-        //         elementType: 'geometry',
-        //         stylers: [{
-        //             color: '#9ebfcc'
-        //         }]
-        //     },
-        //     {
-        //         featureType: 'poi.park',
-        //         elementType: 'labels.text.fill',
-        //         stylers: [{
-        //             color: '#6199ad'
-        //         }]
-        //     },
-        //     {
-        //         featureType: 'road',
-        //         elementType: 'geometry',
-        //         stylers: [{
-        //             color: '#ffffff'
-        //         }]
-        //     },
-        //     {
-        //         featureType: 'road',
-        //         elementType: 'geometry.stroke',
-        //         stylers: [{
-        //             color: '#b4cdd6'
-        //         }]
-        //     },
-        //     {
-        //         featureType: 'road',
-        //         elementType: 'labels.text.fill',
-        //         stylers: [{
-        //             color: '#9ca5b3'
-        //         }]
-        //     },
-        //     {
-        //         featureType: 'road.highway',
-        //         elementType: 'geometry',
-        //         stylers: [{
-        //             color: '#d2e0e6'
-        //         }]
-        //     },
-        //     {
-        //         featureType: 'road.highway',
-        //         elementType: 'geometry.stroke',
-        //         stylers: [{
-        //             color: '#a3c2cf'
-        //         }]
-        //     },
-        //     {
-        //         featureType: 'road.highway',
-        //         elementType: 'labels.text.fill',
-        //         stylers: [{
-        //             color: '#46889e'
-        //         }]
-        //     },
-        //     {
-        //         featureType: 'transit',
-        //         elementType: 'geometry',
-        //         stylers: [{
-        //             color: '#c8dae1'
-        //         }]
-        //     },
-        //     {
-        //         featureType: 'transit.station',
-        //         elementType: 'labels.text.fill',
-        //         stylers: [{
-        //             color: '#083948'
-        //         }]
-        //     },
-        //     {
-        //         featureType: 'water',
-        //         elementType: 'geometry',
-        //         stylers: [{
-        //             color: '#bdd3db'
-        //         }]
-        //     },
-        //     {
-        //         featureType: 'water',
-        //         elementType: 'labels.text.fill',
-        //         stylers: [{
-        //             color: '#515c6d'
-        //         }]
-        //     },
-        //     {
-        //         featureType: 'water',
-        //         elementType: 'labels.text.stroke',
-        //         stylers: [{
-        //             color: '#17263c'
-        //         }]
-        //     }
-        // ],
+        zoom: 16,
+        styles: [{
+                elementType: 'labels.text.fill',
+                stylers: [{
+                    color: '#7c9eb0'
+                }]
+            },
+            {
+                elementType: 'geometry.fill',
+                stylers: [{
+                    color: '#ecf1f3'
+                }]
+            },
+            {
+                elementType: 'geometry.stroke',
+                stylers: [{
+                    color: '#98bbce'
+                }]
+            },
+
+            // {
+            //   featureType: '-----------------',
+            //   elementType: 'geometry.fill',
+            //   stylers: [{color: '#00ff00'}]
+            // },
+            {
+                featureType: 'poi.park',
+                elementType: 'geometry.fill',
+                stylers: [{
+                    color: '#c1d1d9'
+                }]
+            },
+            {
+                featureType: 'road',
+                elementType: 'geometry.fill',
+                stylers: [{
+                    color: '#ffffff'
+                }]
+            },
+
+            {
+                featureType: 'road.highway',
+                elementType: 'geometry.stroke',
+                stylers: [{
+                    color: '#80a0b2'
+                }]
+            },
+            {
+                featureType: 'road.highway',
+                elementType: 'geometry.fill',
+                stylers: [{
+                    color: '#d5dfe5'
+                }]
+            },
+            {
+                featureType: 'water',
+                elementType: 'geometry',
+                stylers: [{
+                    color: '#638ba1'
+                }]
+            },
+        ]
 
     };
     var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
